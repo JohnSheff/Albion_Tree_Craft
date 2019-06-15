@@ -7,6 +7,7 @@ export default class Town extends Component {
   render() {
     return (
       <div>
+
         <Dropdown className="col col-sm-2">
           <Dropdown.Button secondary id="dropdownMenuButton">Выбор Городов</Dropdown.Button>
           <Dropdown.Menu aria-labelledby="dropdownMenuButton">

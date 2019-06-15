@@ -8,7 +8,7 @@ export default class Resourse extends Component {
     return (
       <div>
 
-        <Dropdown className="col col-sm-2">
+        <Dropdown className="col col-sm-3">
           <Dropdown.Button secondary id="dropdownMenuButton">Выбор Ресурсов</Dropdown.Button>
           <Dropdown.Menu aria-labelledby="dropdownMenuButton">
             <Dropdown.Item id="1">Ткань</Dropdown.Item>
