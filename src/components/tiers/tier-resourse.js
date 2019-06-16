@@ -6,7 +6,7 @@ import { Dropdown } from 'bootstrap-4-react';
 export default class Tier extends Component {
   render() {
     return (
-      <div>
+      <div style={{margin: "10px"}}>
 
         <Dropdown className="col col-sm-3">
           <Dropdown.Button secondary id="dropdownMenuButton">Выбор Тира Ресурсов</Dropdown.Button>

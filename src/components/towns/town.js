@@ -6,7 +6,7 @@ import { Dropdown } from 'bootstrap-4-react';
 export default class Town extends Component {
   render() {
     return (
-      <div>
+      <div style={{margin: "10px"}}>
 
         <Dropdown className="col col-sm-2">
           <Dropdown.Button secondary id="dropdownMenuButton">Выбор Городов</Dropdown.Button>

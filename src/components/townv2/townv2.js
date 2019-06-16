@@ -5,7 +5,7 @@ import { InputGroup, Form } from 'bootstrap-4-react';
 export default class Townv2 extends Component {
     render() {
         return (
-            <div>
+            <div style={{margin: "10px"}}>
                 <InputGroup mb="3">
                     <InputGroup.PrependText>процент возврата</InputGroup.PrependText>
                     <Form.CustomSelect>

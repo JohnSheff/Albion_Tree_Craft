@@ -1,0 +1,9 @@
+.main-page{
+    height: 600px;
+    width: 95%;
+    border: 3px solid;
+    margin: 20px
+}
+.card{
+    margin: 5px
+}
