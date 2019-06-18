@@ -1,43 +1,61 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Checkbox, Row, Col, Input } from 'antd';
-import Towm from "./components/towns/town";
+import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
 import Resourse from "./components/resourse/resourse";
-// import {Fort} from "./components/towns"
+import { Fort } from "./components/towns/town"
 import "./index.css";
 import 'antd/dist/antd.css';
+
 
 
 class App extends Component {
   state = {
     town: undefined,
     res: undefined,
-    persent: 15
+    persent: 15,
+    tier: undefined
   };
-  valueSelect =(props) =>{
-  this.setState({
-  })}
+  valueSelectTown = (valTown) => {
 
-  // funcValueTowm =(props) =>{
-  //   if(Fort.some(Element=> Element === JSON.stringify(Fort[0])) {
-  //   }
-  // }
+    this.setState({ town: valTown })
+    this.valuePersent()
+  }
+  valueSelectRes = (valRes) => {
+
+    this.setState({ res: valRes })
+    this.valuePersent()
+  }
+  valueSelectTier = (valTier) => {
+
+    this.setState({ tier: valTier })
+
+  }
+  valuePersent = () => {
+    if (Fort.some(element => JSON.stringify(element) === JSON.stringify({ town: this.state.town, res: this.state.res }))) {
+      this.setState({
+        persent: 35
+      })
+    }
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="main-page">
-        <Row style={{border: "2px solid", padding: 10 }} gutter={5}>
+        <Row style={{ border: "2px solid", padding: 10 }} gutter={5}>
           <Col span={2}>
-            <Towm />
+            <Town selectTown={this.valueSelectTown} valueTown={this.state.town} />
           </Col>
           <Col span={1}>
-            <Input placeholder="" value={this.state.persent +" %"} disabled style={{backgroundColor: "#ffffff", color: "red", textAlign: "center"}}></Input>
+            <Input placeholder="" value={this.state.persent + " %"} disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }}></Input>
+          </Col>
+          <Col span={2}>
+            <Resourse selectRes={this.valueSelectRes} valueRes={this.state.res} />
           </Col>
           <Col span={3}>
-            <Resourse />
-          </Col>
-          <Col span={4}>
-            <Tier />
+            <Tier selectTier={this.valueSelectTier} valueTier={this.state.tier} />
           </Col>
         </Row>
         <Row>
