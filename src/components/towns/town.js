@@ -13,11 +13,7 @@ export default class Town extends Component {
   render() {
     return (
       <div style={{ margin: "10px", width: "300px" }}>
-
-        <Select style={{ margin: "10px", width: "300px" }}
-          defaultValue={"Выбор города"}
-          onChange={e => { console.log(e); }}
-        >
+        <Select style={{ margin: "10px", width: "300px" }} defaultValue={"Выбор города"} onChange={e => { console.log(e); }}        >
           <Select.Option value={Fort[0].town}>{Fort[0].town}</Select.Option>
           <Select.Option value={Fort[1].town}>{Fort[1].town}</Select.Option>
           <Select.Option value={Fort[2].town}>{Fort[2].town}</Select.Option>
