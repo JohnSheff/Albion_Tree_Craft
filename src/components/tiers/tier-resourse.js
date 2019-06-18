@@ -7,9 +7,9 @@ import { Select } from "antd";
 export default class Tier extends Component {
   render() {
     return (
-      <div style={{ margin: "10px" , width: "300px" }} >
-        <Select style={{ margin: "10px" , width: "300px" }} defaultValue={"Выбор тира ингридиента"}>
-          <Select.Option value="1">1 Тир</Select.Option>
+   
+        <Select style={{ width: "100%" }} defaultValue={"Выбор тира ингридиента"}>
+          <Select.Option  value="1">1 Тир</Select.Option>
           <Select.Option value="2">2 Тир</Select.Option>
           <Select.Option value="3">3 Тир</Select.Option>
           <Select.Option value="4">4 Тир</Select.Option>
@@ -18,7 +18,7 @@ export default class Tier extends Component {
           <Select.Option value="7">7 Тир</Select.Option>
           <Select.Option value="8">8 Тир</Select.Option>
         </Select>
-      </div>
+     
     );
   }
 }

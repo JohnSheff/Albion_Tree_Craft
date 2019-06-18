@@ -26,14 +26,17 @@ class App extends Component {
   render() {
     return (
       <div className="main-page">
-        <Row style={{ margin: "15px", border: "2px solid" }}>
-          <Col span={8}>
+        <Row style={{border: "2px solid", padding: 10 }} gutter={5}>
+          <Col span={2}>
             <Towm />
           </Col>
-          <Col span={8}>
+          <Col span={1}>
+            <Input placeholder="" value={this.state.persent +" %"} disabled style={{backgroundColor: "#ffffff", color: "red", textAlign: "center"}}></Input>
+          </Col>
+          <Col span={3}>
             <Resourse />
           </Col>
-          <Col span={8}>
+          <Col span={4}>
             <Tier />
           </Col>
         </Row>
