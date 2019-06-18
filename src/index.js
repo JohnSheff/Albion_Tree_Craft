@@ -15,9 +15,9 @@ class App extends Component {
     res: undefined,
     persent: 15
   };
-  // valueSelect =(props) =>{
-  // this.setState({
-  // })
+  valueSelect =(props) =>{
+  this.setState({
+  })}
 
   // funcValueTowm =(props) =>{
   //   if(Fort.some(Element=> Element === JSON.stringify(Fort[0])) {
