@@ -1,26 +1,21 @@
 import React, { Component } from "react";
 
-import { Dropdown } from 'bootstrap-4-react';
+import { Select } from "antd";
+import { Fort } from "../towns/town";
 
 
 export default class Resourse extends Component {
   render() {
     return (
-      <div style={{margin: "10px"}}>
-
-        <Dropdown className="col col-sm-3">
-          <Dropdown.Button secondary id="dropdownMenuButton">Выбор Ресурсов</Dropdown.Button>
-          <Dropdown.Menu aria-labelledby="dropdownMenuButton">
-            <Dropdown.Item id="1">Ткань</Dropdown.Item>
-            <Dropdown.Item id="2">Кожа</Dropdown.Item>
-            <Dropdown.Item id="3">Руда</Dropdown.Item>
-            <Dropdown.Item id="4">Дерево</Dropdown.Item>
-            <Dropdown.Item id="5">Камень</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <div style={{ margin: "10px", width: "300px" }}>
+        <Select defaultValue={"Выбор Ресурсов"} style={{ margin: "10px", width: "300px" }} onChange={e => { console.log(e); }}>
+          <Select.Option value={Fort[0].res}>{Fort[0].res}</Select.Option>
+          <Select.Option value={Fort[1].res}>{Fort[1].res}</Select.Option>
+          <Select.Option value={Fort[2].res}>{Fort[2].res}</Select.Option>
+          <Select.Option value={Fort[3].res}>{Fort[3].res}</Select.Option>
+          <Select.Option value={Fort[4].res}>{Fort[4].res}</Select.Option>
+        </Select>
       </div>
-    )
-
-
+    );
   }
 }

@@ -1,29 +1,24 @@
 import React, { Component } from "react";
+import { Select } from "antd";
+// import { InputGroup, Form } from "bootstrap-4-react";
 
-import { Dropdown } from 'bootstrap-4-react';
 
 
 export default class Tier extends Component {
   render() {
     return (
-      <div style={{margin: "10px"}}>
-
-        <Dropdown className="col col-sm-3">
-          <Dropdown.Button secondary id="dropdownMenuButton">Выбор Тира Ресурсов</Dropdown.Button>
-          <Dropdown.Menu aria-labelledby="dropdownMenuButton">
-            <Dropdown.Item id="1">1 тир</Dropdown.Item>
-            <Dropdown.Item id="2">2 тир</Dropdown.Item>
-            <Dropdown.Item id="3">3 тир</Dropdown.Item>
-            <Dropdown.Item id="4">4 тир</Dropdown.Item>
-            <Dropdown.Item id="5">5 тир</Dropdown.Item>
-            <Dropdown.Item id="6">6 тир</Dropdown.Item>
-            <Dropdown.Item id="7">7 тир</Dropdown.Item>
-            <Dropdown.Item id="8">8 тир</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <div style={{ margin: "10px" , width: "300px" }} >
+        <Select style={{ margin: "10px" , width: "300px" }} defaultValue={"Выбор тира ингридиента"}>
+          <Select.Option value="1">1 Тир</Select.Option>
+          <Select.Option value="2">2 Тир</Select.Option>
+          <Select.Option value="3">3 Тир</Select.Option>
+          <Select.Option value="4">4 Тир</Select.Option>
+          <Select.Option value="5">5 Тир</Select.Option>
+          <Select.Option value="6">6 Тир</Select.Option>
+          <Select.Option value="7">7 Тир</Select.Option>
+          <Select.Option value="8">8 Тир</Select.Option>
+        </Select>
       </div>
-    )
-
-
+    );
   }
 }

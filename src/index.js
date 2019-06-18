@@ -1,54 +1,91 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Form } from 'bootstrap-4-react';
-import Towm from "./components/towns/town"
-import Tier from "./components/tiers/tier-resourse"
-import Resourse from "./components/resourse/resourse"
+import { Checkbox, Row, Col, Input } from 'antd';
+import Towm from "./components/towns/town";
+import Tier from "./components/tiers/tier-resourse";
+import Resourse from "./components/resourse/resourse";
+// import {Fort} from "./components/towns"
+import "./index.css";
+import 'antd/dist/antd.css';
 
-import "./index.css"
 
 class App extends Component {
+  state = {
+    town: undefined,
+    res: undefined,
+    persent: 15
+  };
 
+  // valueSelect =(props) =>{
+  // this.setState({
+
+  // })
+
+
+  // funcValueTowm =(props) =>{
+  //   if(Fort.some(Element=> Element === JSON.stringify(Fort[0])) {
+
+  //   }
+  // }
   render() {
     return (
       <div className="main-page">
-        <div className="row" style={{ margin: "15px", border: "2px solid"  }}  >
-        <Towm />
-     
-          <Resourse />
-          <Tier />
-         
-        </div>
-        <div className="row">
-          <input
-            class="form-control" style={{ margin: 30, width: "auto" }} type="text" placeholder="Вводим количество">
-          </input>
-          <div className="col col-sm-3">
-          <input
-            class="form-control" style={{ margin: 30, width: "" }} type="text" placeholder="Результат подсчета готового ресурса" disabled>
-          </input>
-            
-          </div>
-          <Form.Check>
-            <Form.Checkbox id="defaultCheck1" />
-            <Form.CheckLabel htmlFor="defaultCheck1">разв дерево</Form.CheckLabel>
-          </Form.Check>
-          <div className="col col-sm-3" >
-            
-          <input
-            class="form-control" style={{ margin: 30, width: "" }} type="text" placeholder="результат подсчета обычного ресурса" disabled>
-          </input>
-          </div>
-          <div className="col col-sm-3" >
-                    <input
-            class="form-control" style={{ margin: 30, width: "" }} type="text" placeholder="результат после переработки % от городов" disabled>
-          </input>
-          </div>
-        </div>
+        <Row style={{ margin: "15px", border: "2px solid" }}>
+          <Col span={8}>
+            <Towm />
+          </Col>
+          <Col span={8}>
+            <Resourse />
+          </Col>
+          <Col span={8}>
+            <Tier />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={4}>
+            <Input
+              className="form-control"
+              style={{ margin: 30, width: "280px" }}
+              type="text"
+              placeholder="Вводим количество"
+            />
+          </Col>
+          <Col span={5}>
+            <Input
+              className="form-control"
+              style={{ margin: 30, width: "280px" }}
+              type="text"
+              placeholder="Результат подсчета готового ресурса"
+              disabled
+            />
+          </Col>
+          <Col span={2}>
+            <Checkbox.Group style={{ width: 'auto' }}>
+              <Checkbox value="Х">Раскрыть дерево</Checkbox>
+            </Checkbox.Group>
+          </Col>
+          <Col span={5}>
+            <Input
+              className="form-control"
+              style={{ margin: 30, width: "280px" }}
+              type="text"
+              placeholder="результат подсчета обычного ресурса"
+              disabled
+            />
+          </Col>
+          <Col span={5}>
+            <Input
+              className="form-control"
+              style={{ margin: 30, width: "300px" }}
+              type="text"
+              placeholder="результат после переработки % от городов"
+              disabled
+            />
+          </Col>
+        </Row>
       </div>
     );
-
   }
 }
 const rootElement = document.getElementById("root");
-ReactDOM.render(< App />, rootElement);
+ReactDOM.render(<App />, rootElement);
