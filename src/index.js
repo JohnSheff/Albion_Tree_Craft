@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Checkbox, Row, Col, Input } from 'antd';
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
-import Resourse from "./components/resourse/resourse";
+import Resourse from "./components/resourses/resourse";
 import { Fort } from "./components/towns/town"
 import "./index.css";
 import 'antd/dist/antd.css';
@@ -11,55 +11,55 @@ import 'antd/dist/antd.css';
 
 
 class App extends Component {
+
+ 
+  valueSelectTown = (valTown) => {
+    this.setState({ town: valTown })
+    console.log(this.state)
+      }
+
+  valueSelectRes = (valRes) => {
+    this.setState({ res: valRes })
+  }
+
+  valueSelectTier = (valTier) => {
+    this.setState({ tier: valTier })
+    
+  }
+
+  valuePersent = () => {
+    if (Fort.some(element => JSON.stringify(element) === JSON.stringify({ town: this.state.town, res: this.state.res }))) {
+      this.setState({ persent: 35 })
+    }
+    else {
+      this.setState({ persent: 15 })
+    }
+  }
+
   state = {
     town: undefined,
     res: undefined,
     persent: 15,
     tier: undefined
+
   };
-  valueSelectTown = (valTown) => {
-    this.setState({ town: valTown })
-    this.valuePersent()
-  }
-
-  valueSelectRes = (valRes) => {
-    this.setState({ res: valRes })
-    this.valuePersent()
-  }
-
-  valueSelectTier = (valTier) => {
-    this.setState({ tier: valTier })
-  }
-  valuePersent = () => {
-
-    console.log(this.state)
-    if (Fort.some(element => JSON.stringify(element) === JSON.stringify({ town: this.state.town, res: this.state.res }))) {
-      this.setState({
-        persent: 35
-      })
-    }
-    else {
-      this.setState({
-        persent: 15
-      })
-    }
-  }
-
   render() {
+const{town, persent,res, tier} = this.state
+console.log(this.state)
     return (
       <div className="main-page">
         <Row style={{ border: "2px solid", padding: 10 }} gutter={5}>
           <Col span={2}>
-            <Town selectTown={this.valueSelectTown} valueTown={this.state.town} valuePers={this.valuePersent} />
+            <Town selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
           <Col span={1}>
-            <Input placeholder="" value={this.state.persent + " %"} disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }}></Input>
+            <Input placeholder="" value={persent + " %"} disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }}></Input>
           </Col>
           <Col span={2}>
-            <Resourse selectRes={this.valueSelectRes} valueRes={this.state.res} valuePers={this.valuePersent} />
+            <Resourse selectRes={this.valueSelectRes} valueRes={res} />
           </Col>
           <Col span={3}>
-            <Tier selectTier={this.valueSelectTier} valueTier={this.state.tier} />
+            <Tier selectTier={this.valueSelectTier} valueTier={tier} />
           </Col>
         </Row>
         <Row>

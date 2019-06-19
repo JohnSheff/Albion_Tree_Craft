@@ -6,9 +6,9 @@ import { Select } from "antd";
 
 export default class Tier extends Component {
   render() {
-    const { valueTier} = this.props
+    const { valueTier, selectTier} = this.props
     return (
-      <Select style={{ width: "100%" }} value={valueTier || "Выбор тира ингридиента"} onChange={(e) =>{this.props.selectTier(e)}}   >
+      <Select style={{ width: "100%" }} value={valueTier || "Выбор тира ингридиента"} onChange={(e) =>{selectTier(e)}}   >
         <Select.Option value={1}>1 Тир</Select.Option>
         <Select.Option value={2}>2 Тир</Select.Option>
         <Select.Option value={3}>3 Тир</Select.Option>
