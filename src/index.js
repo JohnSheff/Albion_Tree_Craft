@@ -15,12 +15,14 @@ class App extends Component {
  
   valueSelectTown = (valTown) => {
     this.setState({ town: valTown })
-    
+    const date= new Date()
+    console.log(date.getMilliseconds())
      }
 
   valueSelectRes = (valRes) => {
     this.setState({ res: valRes })
-    
+    const date= new Date()
+    console.log(date.getMilliseconds())
   }
 
   valueSelectTier = (valTier) => {
@@ -46,7 +48,8 @@ class App extends Component {
   };
   render() {
 const{town, persent,res, tier} = this.state
-console.log(this.state)
+const date= new Date()
+console.log(date.getMilliseconds())
     return (
       <div className="main-page">
         <Row style={{ border: "2px solid", padding: 10 }} gutter={5}>
