@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Checkbox, Row, Col, Input } from 'antd';
+import { Checkbox, Row, Col, Input,Button  } from 'antd';
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
 import Resourse from "./components/resourses/resourse";
@@ -15,11 +15,12 @@ class App extends Component {
  
   valueSelectTown = (valTown) => {
     this.setState({ town: valTown })
-    console.log(this.state)
-      }
+    
+     }
 
   valueSelectRes = (valRes) => {
     this.setState({ res: valRes })
+    
   }
 
   valueSelectTier = (valTier) => {
@@ -52,8 +53,9 @@ console.log(this.state)
           <Col span={2}>
             <Town selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
-          <Col span={1}>
-            <Input placeholder="" value={persent + " %"} disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }}></Input>
+          <Col span={3}>
+            <Button style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center", width: "auto" }}
+            onClick={() => {this.valuePersent()}}>{"Посчитать % возврата " +  persent }</Button >
           </Col>
           <Col span={2}>
             <Resourse selectRes={this.valueSelectRes} valueRes={res} />
