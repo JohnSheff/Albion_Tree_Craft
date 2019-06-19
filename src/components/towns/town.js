@@ -15,8 +15,8 @@ export default class Town extends Component {
 
   render() {
     const { valueTown } = this.props
-        return (
-      <Select style={{ width: "100%" }} value={valueTown || "Выбор города"} onChange={(e) => { this.props.selectTown(e) }}        >
+    return (
+      <Select style={{ width: "100%" }} value={valueTown || "Выбор города"} onChange={(e) => { this.props.selectTown(e) }} >
         <Select.Option value={Fort[0].town}>{Fort[0].town}</Select.Option>
         <Select.Option value={Fort[1].town}>{Fort[1].town}</Select.Option>
         <Select.Option value={Fort[2].town}>{Fort[2].town}</Select.Option>

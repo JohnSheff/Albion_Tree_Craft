@@ -18,41 +18,45 @@ class App extends Component {
     tier: undefined
   };
   valueSelectTown = (valTown) => {
-
     this.setState({ town: valTown })
     this.valuePersent()
   }
-  valueSelectRes = (valRes) => {
 
+  valueSelectRes = (valRes) => {
     this.setState({ res: valRes })
     this.valuePersent()
   }
+
   valueSelectTier = (valTier) => {
-
     this.setState({ tier: valTier })
-
   }
   valuePersent = () => {
+
+    console.log(this.state)
     if (Fort.some(element => JSON.stringify(element) === JSON.stringify({ town: this.state.town, res: this.state.res }))) {
       this.setState({
         persent: 35
       })
     }
+    else {
+      this.setState({
+        persent: 15
+      })
+    }
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="main-page">
         <Row style={{ border: "2px solid", padding: 10 }} gutter={5}>
           <Col span={2}>
-            <Town selectTown={this.valueSelectTown} valueTown={this.state.town} />
+            <Town selectTown={this.valueSelectTown} valueTown={this.state.town} valuePers={this.valuePersent} />
           </Col>
           <Col span={1}>
             <Input placeholder="" value={this.state.persent + " %"} disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }}></Input>
           </Col>
           <Col span={2}>
-            <Resourse selectRes={this.valueSelectRes} valueRes={this.state.res} />
+            <Resourse selectRes={this.valueSelectRes} valueRes={this.state.res} valuePers={this.valuePersent} />
           </Col>
           <Col span={3}>
             <Tier selectTier={this.valueSelectTier} valueTier={this.state.tier} />
