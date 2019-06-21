@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Checkbox, Row, Col, Input } from 'antd';
+import { Row, Col, Input } from 'antd';
+import InputValue from "./components/Inputs/input-value"
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
 import Resourse from "./components/resourses/resourse";
@@ -54,7 +55,7 @@ class App extends Component {
             <Town selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
           <Col xs={8} sm={4} md={2}>
-            <Input placeholder="" disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center"}} value={persent + " %"} />
+            <Input placeholder="" disabled style={{ backgroundColor: "#ffffff", color: "red", textAlign: "center" }} value={persent + " %"} />
           </Col>
           <Col xs={12} sm={12} md={6}>
             <Resourse selectRes={this.valueSelectRes} valueRes={res} />
@@ -64,48 +65,7 @@ class App extends Component {
             <Tier selectTier={this.valueSelectTier} valueTier={tier} />
           </Col>
         </Row>
-        <Row style={{ border: "2px solid", padding: "10px", margin: 3 }} gutter={5}>
-          <Col xs={10} sm={10} md={6}>
-            <Input
-              className="form-control"
-              // style={{ margin: "auto", width: "auto" }}
-              type="text"
-              placeholder="Вводим кол-во"
-            />
-          </Col>
-          <Col xs={10} sm={4} md={3}>
-            <Input
-              className="form-control"
-              // style={{ margin: "auto", width: "auto" }}
-              type="text"
-              placeholder="Цифра"
-              disabled
-            />
-          </Col>
-          <Col xs={10} sm={3} md={2}>
-            <Checkbox.Group >
-              <Checkbox value="Х"><br/>Раскрыть дерево</Checkbox>
-            </Checkbox.Group>
-          </Col>
-          <Col xs={10} sm={4} md={3}>
-            <Input
-              className="form-control"
-              // style={{ margin: "auto", width: "auto" }}
-              type="text"
-              placeholder="Цифра"
-              disabled
-            />
-          </Col>
-          <Col xs={10} sm={4} md={3}>
-            <Input
-              className="form-control"
-              // style={{ margin: "auto", width: "auto" }}
-              type="text"
-              placeholder="Цифра"
-              disabled
-            />
-          </Col>
-        </Row>
+        <InputValue tierValue={tier} persentValue={persent} />
       </div>
     );
   }
