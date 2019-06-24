@@ -5,19 +5,19 @@ export default class InputValue extends Component {
   funcSwitchTier = tier => {
     switch (tier) {
       case 8:
-        return this.props.inputVal ? this.props.inputVal * 5 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 5 : "Выбирите Тир";
       case 7:
-        return this.props.inputVal ? this.props.inputVal * 5 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 5 : "Выбирите Тир";
       case 6:
-        return this.props.inputVal ? this.props.inputVal * 4 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 4 : "Выбирите Тир";
       case 5:
-        return this.props.inputVal ? this.props.inputVal * 3 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 3 : "Выбирите Тир";
       case 4:
-        return this.props.inputVal ? this.props.inputVal * 2 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 2 : "Выбирите Тир";
       case 3:
-        return this.props.inputVal ? this.props.inputVal * 2 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 2 : "Выбирите Тир";
       case 2:
-        return this.props.inputVal ? this.props.inputVal * 1 : "исходный Тир";
+        return this.props.inputVal ? this.props.inputVal * 1 : "Выбирите Тир";
       default:
         break;
     }
@@ -31,6 +31,11 @@ export default class InputValue extends Component {
       >
         <Col xs={10} sm={10} md={6}>
           <Input
+            style={{
+              backgroundColor: "#ffffff",
+              color: "red",
+              textAlign: "center"
+            }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
@@ -41,33 +46,39 @@ export default class InputValue extends Component {
             }}
           />
         </Col>
-        {this.props.tierValue !== 1 ? (
-          <>
-            <Col xs={10} sm={4} md={3}>
-              <Input
-                className="form-control"
-                // style={{ margin: "auto", width: "auto" }}
-                type="text"
-                placeholder="исходный Тир"
-                value={this.funcSwitchTier(this.props.tierValue)}
-                disabled
-              />
-            </Col>
-            <Col xs={10} sm={3} md={2}>
-              <Checkbox
-                onChange={e => {
-                  this.props.oneMoreArr(e.target.checked);
-                }}
-              >
-                <br />
-                Раскрыть дерево
-              </Checkbox>
-            </Col>
-          </>
-        ) : null}
-
         <Col xs={10} sm={4} md={3}>
           <Input
+            style={{
+              backgroundColor: "#ffffff",
+              color: "red",
+              textAlign: "center"
+            }}
+            className="form-control"
+            // style={{ margin: "auto", width: "auto" }}
+            type="text"
+            placeholder="Выбирите Тир"
+            value={this.funcSwitchTier(this.props.tierValue)}
+            disabled
+          />
+        </Col>
+        <Col xs={10} sm={3} md={2}>
+          <Checkbox
+            defaultchecked={false}
+            onChange={e => {
+              this.props.oneMoreArr(e.target.checked);
+            }}
+          >
+            <br />
+            Раскрыть дерево
+              </Checkbox>
+        </Col>
+        <Col xs={10} sm={4} md={3}>
+          <Input
+            style={{
+              backgroundColor: "#ffffff",
+              color: "red",
+              textAlign: "center"
+            }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
@@ -78,6 +89,11 @@ export default class InputValue extends Component {
         </Col>
         <Col xs={10} sm={4} md={3}>
           <Input
+            style={{
+              backgroundColor: "#ffffff",
+              color: "red",
+              textAlign: "center"
+            }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"

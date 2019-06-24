@@ -16,13 +16,13 @@ class App extends Component {
     persent: 15,
     tier: undefined,
     inputArr: [1],
-    startValue: 0
+    startValue: null
   };
 
   oneMoreArr = val => {
     if (this.state.inputArr.length < this.state.tier - 1) {
       if (val) {
-        this.state.inputArr.push(true);
+        this.state.inputArr.push(val);
         this.setState({ inputArr: this.state.inputArr });
       } else if (this.state.inputArr.length === 1) {
         val = false;
@@ -51,16 +51,21 @@ class App extends Component {
   };
 
   valueSelectTier = valTier => {
+
     this.setState({ tier: valTier });
-    if (valTier < this.state.inputArr.length) {
-      this.setState({
-        inputArr: this.state.inputArr.splice(
-          0,
-          this.state.inputArr.length -
-            (this.state.inputArr.length - valTier + 1)
-        )
-      });
-    }
+    this.setState({ inputArr: [1] })
+
+    // if (valTier < this.state.inputArr.length) {
+    //   this.setState({
+    //     inputArr: this.state.inputArr.splice(
+    //       0,
+    //       this.state.inputArr.length -
+    //       (this.state.inputArr.length - valTier + 1)
+    //     )
+    //   });
+    // } else{
+    //   this.setState({ inputArr: [1] })
+    // }
   };
 
   valuePersent = (town, res) => {
@@ -82,7 +87,7 @@ class App extends Component {
 
   render() {
     const { town, persent, res, tier, inputArr, startValue } = this.state;
-    console.log(this.state);
+
 
     return (
       <div className="main-page">
