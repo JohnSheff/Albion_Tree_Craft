@@ -56,7 +56,7 @@ export default class InputValue extends Component {
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="Выбирите Тир"
+            placeholder="Выбирите Тир продукта"
             value={this.funcSwitchTier(this.props.tierValue)}
             disabled
           />
@@ -97,11 +97,11 @@ export default class InputValue extends Component {
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="после % возвр"
+            placeholder="Возврат ресурсов от выбора города"
             value={
               this.props.persentValue && this.props.inputVal
                 ? (this.props.persentValue / 100) * this.props.inputVal
-                : "после % возвр"
+                : "Бонус от города"
             }
             disabled
           />

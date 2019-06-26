@@ -107,7 +107,7 @@ class App extends Component {
                 color: "red",
                 textAlign: "center"
               }}
-              value={persent + " %"}
+              value={"Бонус города "+ persent +"%"}
             />
           </Col>
           <Col xs={12} sm={12} md={6}>
