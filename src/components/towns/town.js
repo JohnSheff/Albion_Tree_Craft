@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Select } from "antd";
 
 export const Fort = [
-  { town: "Тетфорт", res: "Руда" },
+  { town: "Тетфорт", res: "Руда"},
   { town: "Мартлок", res: "Кожа" },
   { town: "Форт Стерлинг", res: "Дерево" },
   { town: "Бриджвотч", res: "Камень" },

@@ -5,19 +5,19 @@ export default class InputValue extends Component {
   funcSwitchTier = tier => {
     switch (tier) {
       case 8:
-        return this.props.inputVal ? this.props.inputVal * 5 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 5 : "";
       case 7:
-        return this.props.inputVal ? this.props.inputVal * 5 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 5 : "";
       case 6:
-        return this.props.inputVal ? this.props.inputVal * 4 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 4 : "";
       case 5:
-        return this.props.inputVal ? this.props.inputVal * 3 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 3 : "";
       case 4:
-        return this.props.inputVal ? this.props.inputVal * 2 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 2 : "";
       case 3:
-        return this.props.inputVal ? this.props.inputVal * 2 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 2 : "";
       case 2:
-        return this.props.inputVal ? this.props.inputVal * 1 : "Выбирите Тир";
+        return this.props.inputVal ? this.props.inputVal * 1 : "";
       default:
         break;
     }
@@ -100,7 +100,7 @@ export default class InputValue extends Component {
             placeholder="Возврат ресурсов от выбора города"
             value={
               this.props.persentValue && this.props.inputVal
-                ? (this.props.persentValue / 100) * this.props.inputVal
+                ? "Бонус от города = " + (this.props.persentValue / 100) * this.props.inputVal
                 : "Бонус от города"
             }
             disabled

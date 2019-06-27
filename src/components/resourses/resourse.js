@@ -14,6 +14,7 @@ export default class Resourse extends Component {
           <Select.Option value={Fort[2].res}>{Fort[2].res}</Select.Option>
           <Select.Option value={Fort[3].res}>{Fort[3].res}</Select.Option>
           <Select.Option value={Fort[4].res}>{Fort[4].res}</Select.Option>
+         
         </Select>
     
     );
