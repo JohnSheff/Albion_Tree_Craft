@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Input, Checkbox } from "antd";
+import { Col, Row, Input, Checkbox, Icon } from "antd";
 
 export default class InputValue extends Component {
   funcSwitchTier = tier => {
@@ -89,6 +89,7 @@ export default class InputValue extends Component {
         </Col>
         <Col xs={10} sm={4} md={3}>
           <Input
+            suffix={<Icon type="user"></Icon>}
             style={{
               backgroundColor: "#ffffff",
               color: "red",

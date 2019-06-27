@@ -68,16 +68,18 @@ class App extends Component {
     // }
   };
 
-  valuePersent = (town, res) => {
+  valuePersent = (townVal, resVal) => {
     if (
-      Fort.some(
-        element =>
-          JSON.stringify(element) ===
+      Fort.some((
+        element) => {
+        const { town, res } = element
+        return (
+          JSON.stringify({ town, res }) ===
           JSON.stringify({
-            town: town || this.state.town,
-            res: res || this.state.res
-          })
-      )
+            town: townVal || this.state.town,
+            res: resVal || this.state.res
+          }))
+      })
     ) {
       this.setState({ persent: 35 });
     } else {
@@ -98,8 +100,9 @@ class App extends Component {
           <Col xs={12} sm={12} md={6}>
             <Town selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
-          <Col xs={8} sm={4} md={2}>
+          <Col xs={8} sm={4} md={3}>
             <Input
+              size="large"
               placeholder=""
               disabled
               style={{
@@ -107,7 +110,7 @@ class App extends Component {
                 color: "red",
                 textAlign: "center"
               }}
-              value={"Бонус города "+ persent +"%"}
+              value={"Бонус города " + persent + "%"}
             />
           </Col>
           <Col xs={12} sm={12} md={6}>
