@@ -97,10 +97,10 @@ class App extends Component {
           style={{ border: "2px solid", padding: "10px", margin: 3 }}
           gutter={5}
         >
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={24} sm={12} md={6}>
             <Town selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
-          <Col xs={8} sm={4} md={3}>
+          <Col xs={24} sm={12} md={6}>
             <Input
               size="large"
               placeholder=""
@@ -113,11 +113,11 @@ class App extends Component {
               value={"Бонус города " + persent + "%"}
             />
           </Col>
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={24} sm={12} md={6}>
             <Resourse selectRes={this.valueSelectRes} valueRes={res} />
           </Col>
 
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={24} sm={12} md={6}>
             <Tier selectTier={this.valueSelectTier} valueTier={tier} />
           </Col>
         </Row>

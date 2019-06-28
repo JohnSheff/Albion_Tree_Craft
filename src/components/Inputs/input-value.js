@@ -29,24 +29,25 @@ export default class InputValue extends Component {
         style={{ border: "2px solid", padding: "10px", margin: 3 }}
         gutter={5}
       >
-        <Col xs={10} sm={10} md={6}>
+        <Col xs={24} sm={12} md={6}>
           <Input
             style={{
               backgroundColor: "#ffffff",
               color: "red",
-              textAlign: "center"
+              textAlign: "center",
+              width: "auto"
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="Вводим кол-во"
+            placeholder="Вводим количество"
             value={this.props.inputVal}
             onInput={e => {
               this.props.fv(e.target.value);
             }}
           />
         </Col>
-        <Col xs={10} sm={4} md={3}>
+        <Col xs={24} sm={12} md={4}>
           <Input
             style={{
               backgroundColor: "#ffffff",
@@ -61,7 +62,7 @@ export default class InputValue extends Component {
             disabled
           />
         </Col>
-        <Col xs={10} sm={3} md={2}>
+        <Col xs={24} sm={12} md={2}>
           <Checkbox
             defaultchecked={false}
             onChange={e => {
@@ -72,7 +73,7 @@ export default class InputValue extends Component {
             Раскрыть дерево
               </Checkbox>
         </Col>
-        <Col xs={10} sm={4} md={3}>
+        <Col xs={24} sm={12} md={6}>
           <Input
             style={{
               backgroundColor: "#ffffff",
@@ -87,9 +88,9 @@ export default class InputValue extends Component {
             disabled
           />
         </Col>
-        <Col xs={10} sm={4} md={3}>
+        <Col xs={24} sm={12} md={6}>
           <Input
-            suffix={<Icon type="user"></Icon>}
+            
             style={{
               backgroundColor: "#ffffff",
               color: "red",
