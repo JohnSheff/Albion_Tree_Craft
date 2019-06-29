@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Col, Row, Input, Checkbox, Icon } from "antd";
+import { Col, Row, Input, Checkbox, Icon, Switch } from "antd";
 
 export default class InputValue extends Component {
-  funcSwitchTier = tier => {
+  funcSwitchTier = (tier) => {
     switch (tier) {
       case 8:
         return this.props.inputVal ? this.props.inputVal * 5 : "";
@@ -27,32 +27,31 @@ export default class InputValue extends Component {
     return (
       <Row
         style={{ border: "2px solid", padding: "10px", margin: 3 }}
-        gutter={5}
-      >
-        <Col xs={24} sm={12} md={6}>
+        gutter={5}>
+        <Col sm={24} md={12} md={6}>
           <Input
             style={{
               backgroundColor: "#ffffff",
               color: "red",
               textAlign: "center",
-              width: "auto"
+              width: "100%",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
             placeholder="Вводим количество"
             value={this.props.inputVal}
-            onInput={e => {
+            onInput={(e) => {
               this.props.fv(e.target.value);
             }}
           />
         </Col>
-        <Col xs={24} sm={12} md={4}>
+        <Col sm={24} md={12} md={4}>
           <Input
             style={{
               backgroundColor: "#ffffff",
               color: "red",
-              textAlign: "center"
+              textAlign: "center",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
@@ -62,23 +61,26 @@ export default class InputValue extends Component {
             disabled
           />
         </Col>
-        <Col xs={24} sm={12} md={2}>
-          <Checkbox
+        <Col
+          xs={24}
+          sm={12}
+          md={4}
+          style={{ padding: "4px", textAlign: "center" }}>
+          <Switch
             defaultchecked={false}
-            onChange={e => {
-              this.props.oneMoreArr(e.target.checked);
+            checkedChildren="Раскрытое дерево"
+            unCheckedChildren="Свернутое дерево"
+            onChange={(e) => {
+              this.props.oneMoreArr(e);
             }}
-          >
-            <br />
-            Раскрыть дерево
-              </Checkbox>
+          />
         </Col>
-        <Col xs={24} sm={12} md={6}>
+        <Col sm={24} md={12} md={5}>
           <Input
             style={{
               backgroundColor: "#ffffff",
               color: "red",
-              textAlign: "center"
+              textAlign: "center",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
@@ -88,22 +90,22 @@ export default class InputValue extends Component {
             disabled
           />
         </Col>
-        <Col xs={24} sm={12} md={6}>
+        <Col sm={24} md={12} md={5}>
           <Input
-            
             style={{
               backgroundColor: "#ffffff",
               color: "red",
-              textAlign: "center"
+              textAlign: "center",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="Возврат ресурсов от выбора города"
+            // placeholder="Возврат ресурсов от выбора города"
+            addonBefore="Бонус от города"
             value={
               this.props.persentValue && this.props.inputVal
-                ? "Бонус от города = " + (this.props.persentValue / 100) * this.props.inputVal
-                : "Бонус от города"
+                ? (this.props.persentValue / 100) * this.props.inputVal
+                : '0'
             }
             disabled
           />
