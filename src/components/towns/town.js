@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import { Select } from "antd";
 
 export const Fort = [
-  { town: "Тетфорт", res: "Руда", image: "./Images/METALBAR.png"},
-  { town: "Мартлок", res: "Кожа",image: "./Images/LEATHER.png"},
-  { town: "Форт Стерлинг", res: "Дерево",image: "./Images/PLANKS.png"},
-  { town: "Бриджвотч", res: "Камень",image: "./Images/STONEBLOCK.png"},
-  { town: "Люмхурст", res: "Хлопок",image: "./Images/ClOTH.png"}
+  { town: "Тетфорт", res: "Руда", image: "./Images/ORE.png"},
+  { town: "Мартлок", res: "Кожа",image: "./Images/HIDE.png"},
+  { town: "Форт Стерлинг", res: "Дерево",image: "./Images/WOOD.png"},
+  { town: "Бриджвотч", res: "Камень",image: "./Images/ROCK.png"},
+  { town: "Люмхурст", res: "Хлопок",image: "./Images/FIBER.png"}
 ];
 
 
