@@ -6,8 +6,8 @@ import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
 import Resourse from "./components/resourses/resourse";
 import { Fort } from "./components/towns/town";
-import "./index.css";
 import "antd/dist/antd.css";
+import "./index.css";
 
 class App extends Component {
   state = {
@@ -97,12 +97,10 @@ class App extends Component {
           style={{ border: "2px solid", padding: "10px", margin: 3 }}
           gutter={5}
         >
-          <Col 
-         
-          xs={24} sm={12} md={6}>
-            <Town 
-            
-            selectTown={this.valueSelectTown} valueTown={town} />
+          <Col
+            xs={24} sm={12} md={6}>
+            <Town
+              selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
           <Col xs={24} sm={12} md={6}>
             <Input
@@ -110,8 +108,7 @@ class App extends Component {
               placeholder=""
               disabled
               style={{
-                backgroundColor: "#F8F4FF",
-                color: "red",
+                color:"red",
                 textAlign: "center"
               }}
               value={"Бонус города " + persent + "%"}

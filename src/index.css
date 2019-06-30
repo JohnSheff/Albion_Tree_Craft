@@ -1,6 +1,40 @@
-.main-page{
-    height: auto;
+.main-page {
+    height: 750px;
     width: auto;
-    border: 3px solid;
-    margin: 20px
+    margin: 20px;
+    /* background: url("/public/Images/artwoork.jpg"); */
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg);
+    background-size: cover;
+    max-height: 750px
+}
+
+.ant-select-lg .ant-select-selection--single {
+    background-color: #e7d98a09;
+    color: #3601b1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ant-input[disabled] {
+    background-color: #e6fffb2d;
+    color: #041ca0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: 20px bolder
+}
+
+.ant-input {
+    background-color: #e6fffb13;
+    color: #041ca0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: 20px bolder
+}
+
+.ant-input::placeholder {
+    color: #000000
 }

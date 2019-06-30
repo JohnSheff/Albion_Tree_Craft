@@ -31,13 +31,12 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={6}>
           <Input
             style={{
-              backgroundColor: "#F8F4FF",
-              color: "black",
+
               textAlign: "center",
               width: "100%",
             }}
             className="form-control"
-               type="text"
+            type="text"
             placeholder="Вводим количество"
             value={this.props.inputVal}
             onInput={(e) => {
@@ -48,8 +47,7 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={4}>
           <Input
             style={{
-              backgroundColor: "#F8F4FF",
-              color: "red",
+
               textAlign: "center",
             }}
             className="form-control"
@@ -66,7 +64,7 @@ export default class InputValue extends Component {
           lg={4}
           style={{ padding: "4px", textAlign: "center" }}>
           <Switch
-         
+
             checkedChildren="Раскрытое дерево"
             unCheckedChildren="Свернутое дерево"
             onChange={(e) => {
@@ -77,8 +75,6 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={5}>
           <Input
             style={{
-              backgroundColor: "#F8F4FF",
-              color: "red",
               textAlign: "center",
             }}
             className="form-control"
@@ -92,9 +88,9 @@ export default class InputValue extends Component {
         <Col sm={24} md={24} lg={5}>
           <Input
             style={{
-              backgroundColor: "#F8F4FF",
-              color: "red",
+              color: "#a8071a",
               textAlign: "center",
+              fontSize:"20px"
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
