@@ -16,20 +16,20 @@ body {
 }
 
 .ant-select-lg .ant-select-selection--single {
-    background-color: #e7d98a09;
+    background-color: #e6fffb27;
     color: #3601b1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ant-input[disabled] {
-    background-color: #e6fffb2d;
+    background-color: #e6fffb4b;
     color: #041ca0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: 20px bolder
 }
 
 .ant-input {
-    background-color: #e6fffb13;
+    background-color: #e6fffb38;
     color: #041ca0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: 20px bolder
