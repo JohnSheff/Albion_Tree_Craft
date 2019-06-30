@@ -31,8 +31,8 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={6}>
           <Input
             style={{
-              backgroundColor: "#ffffff",
-              color: "red",
+              backgroundColor: "#F8F4FF",
+              color: "black",
               textAlign: "center",
               width: "100%",
             }}
@@ -48,7 +48,7 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={4}>
           <Input
             style={{
-              backgroundColor: "#ffffff",
+              backgroundColor: "#F8F4FF",
               color: "red",
               textAlign: "center",
             }}
@@ -66,7 +66,7 @@ export default class InputValue extends Component {
           lg={4}
           style={{ padding: "4px", textAlign: "center" }}>
           <Switch
-            defaultchecked={false}
+         
             checkedChildren="Раскрытое дерево"
             unCheckedChildren="Свернутое дерево"
             onChange={(e) => {
@@ -77,7 +77,7 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={5}>
           <Input
             style={{
-              backgroundColor: "#ffffff",
+              backgroundColor: "#F8F4FF",
               color: "red",
               textAlign: "center",
             }}
@@ -92,7 +92,7 @@ export default class InputValue extends Component {
         <Col sm={24} md={24} lg={5}>
           <Input
             style={{
-              backgroundColor: "#ffffff",
+              backgroundColor: "#F8F4FF",
               color: "red",
               textAlign: "center",
             }}

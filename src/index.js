@@ -97,8 +97,12 @@ class App extends Component {
           style={{ border: "2px solid", padding: "10px", margin: 3 }}
           gutter={5}
         >
-          <Col xs={24} sm={12} md={6}>
-            <Town selectTown={this.valueSelectTown} valueTown={town} />
+          <Col 
+         
+          xs={24} sm={12} md={6}>
+            <Town 
+            
+            selectTown={this.valueSelectTown} valueTown={town} />
           </Col>
           <Col xs={24} sm={12} md={6}>
             <Input
@@ -106,7 +110,7 @@ class App extends Component {
               placeholder=""
               disabled
               style={{
-                backgroundColor: "#ffffff",
+                backgroundColor: "#F8F4FF",
                 color: "red",
                 textAlign: "center"
               }}
