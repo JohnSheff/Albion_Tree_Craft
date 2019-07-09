@@ -24,7 +24,7 @@ export default class InputValue extends Component {
   };
 
   render() {
-    return (
+       return (
       <Row
         style={{ border: "2px solid", padding: "10px", margin: 3 }}
         gutter={5}>
@@ -47,31 +47,41 @@ export default class InputValue extends Component {
         <Col sm={24} md={12} lg={4}>
           <Input
             style={{
-
               textAlign: "center",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
+
+            prefix={this.props.tier === undefined ? (
+              null
+            ) : "T" + this.props.tierValue}
+
+
             type="text"
             placeholder="Выбирите Тир продукта"
             value={this.funcSwitchTier(this.props.tierValue)}
             disabled
           />
         </Col>
-        <Col
-          xs={24}
-          sm={12}
-          lg={4}
-          style={{ padding: "4px", textAlign: "center" }}>
-          <Switch
+        {/* this.props.inputArr.length+1>this.props.tierValue */}
+        {this.props.tierValue === 2 ? (
+          null
+        ) : <>
+            <Col
+              xs={24}
+              sm={12}
+              lg={4}
+              style={{ padding: "4px", textAlign: "center" }}>
+              <Switch
+                checkedChildren="Раскрытое дерево"
+                unCheckedChildren="Свернутое дерево"
+                onChange={(e) => {
+                  this.props.oneMoreArr(e);
+                }}
+              />
+            </Col>
+          </>}
 
-            checkedChildren="Раскрытое дерево"
-            unCheckedChildren="Свернутое дерево"
-            onChange={(e) => {
-              this.props.oneMoreArr(e);
-            }}
-          />
-        </Col>
         <Col sm={24} md={12} lg={5}>
           <Input
             style={{
@@ -90,7 +100,7 @@ export default class InputValue extends Component {
             style={{
               color: "#a8071a",
               textAlign: "center",
-              fontSize:"20px"
+              fontSize: "20px"
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
@@ -109,3 +119,5 @@ export default class InputValue extends Component {
     );
   }
 }
+
+

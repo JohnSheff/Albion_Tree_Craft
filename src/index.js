@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Row, Col, Input } from "antd";
+import { Row, Col, Input, Layout } from "antd";
 import InputValue from "./components/Inputs/input-value";
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
@@ -8,6 +8,8 @@ import Resourse from "./components/resourses/resourse";
 import { Fort } from "./components/towns/town";
 import "antd/dist/antd.css";
 import "./index.css";
+
+const { Header, Content, Footer } = Layout;
 
 class App extends Component {
   state = {
@@ -24,8 +26,8 @@ class App extends Component {
       if (val) {
         this.state.inputArr.push(val);
         this.setState({ inputArr: this.state.inputArr });
-      } else if (this.state.inputArr.length === 1) {
-        val = false;
+        // } else if (this.state.inputArr.length === 1) {
+        //   val = false;
       } else {
         this.setState({
           inputArr: this.state.inputArr.splice(
@@ -53,7 +55,7 @@ class App extends Component {
   valueSelectTier = valTier => {
 
     this.setState({ tier: valTier });
-    this.setState({ inputArr: [1] })
+    this.setState({ inputArr: [true] })
 
     // if (valTier < this.state.inputArr.length) {
     //   this.setState({
@@ -92,50 +94,59 @@ class App extends Component {
 
 
     return (
-      <div className="main-page">
-        <Row
-          style={{ border: "2px solid", padding: "10px", margin: 3 }}
-          gutter={5}
-        >
-          <Col
-            xs={24} sm={12} md={6}>
-            <Town
-              selectTown={this.valueSelectTown} valueTown={town} />
-          </Col>
-          <Col xs={24} sm={12} md={6}>
-            <Input
-              size="large"
-              placeholder=""
-              disabled
-              style={{
-                backgroundColor: "#e6fffb27",
-                color:"red",
-                textAlign: "center"
-              }}
-              value={"Бонус города " + persent + "%"}
-            />
-          </Col>
-          <Col xs={24} sm={12} md={6}>
-            <Resourse selectRes={this.valueSelectRes} valueRes={res} />
-          </Col>
+      <Layout className="main-page">
+        <Header>
+          <div className="logo-header">Калькуляток Крафта ресурсов и процент возврата от городов</div>
+        </Header>
+        <Content>
+          <Row
+            style={{ border: "2px solid", padding: "10px", margin: 3 }}
+            gutter={5}
+          >
+            <Col
+              xs={24} sm={12} md={6}>
+              <Town
+                selectTown={this.valueSelectTown} valueTown={town} />
+            </Col>
+            <Col xs={24} sm={12} md={6}>
+              <Input
+                size="large"
+                placeholder=""
+                disabled
+                style={{
+                  backgroundColor: "#e6fffb27",
+                  color: "red",
+                  textAlign: "center"
+                }}
+                value={"Бонус города " + persent + "%"}
+              />
+            </Col>
+            <Col xs={24} sm={12} md={6}>
+              <Resourse selectRes={this.valueSelectRes} valueRes={res} />
+            </Col>
 
-          <Col xs={24} sm={12} md={6}>
-            <Tier selectTier={this.valueSelectTier} valueTier={tier} />
-          </Col>
-        </Row>
-        {inputArr.map((val, index) => {
-          return (
-            <InputValue
-              key={index}
-              tierValue={tier - index}
-              persentValue={persent}
-              inputVal={startValue}
-              fv={this.firstValue}
-              oneMoreArr={this.oneMoreArr}
-            />
-          );
-        })}
-      </div>
+            <Col xs={24} sm={12} md={6}>
+              <Tier selectTier={this.valueSelectTier} valueTier={tier} />
+            </Col>
+          </Row>
+          {inputArr.map((val, index) => {
+            return (
+              <InputValue
+                key={index}
+                tierValue={tier - index}
+                persentValue={persent}
+                inputVal={startValue}
+                fv={this.firstValue}
+                oneMoreArr={this.oneMoreArr}
+                tier={tier}
+              />
+            );
+          })}
+        </Content>
+        <Footer>
+ 
+        </Footer>
+      </Layout>
     );
   }
 }
