@@ -1,27 +1,40 @@
 .main-page {
-    height: auto;
-    width: auto;
     margin: 20px;
     background-color: #00000000
     /* background: url("/public/Images/artwoork.jpg"); */
 }
 
-.ant-layout-footer {
-    color: rgba(0, 0, 0, 0);
-    background: rgba(0, 0, 0, 0)
+.tree-logo{
+    width: 130px;
+    padding-left: 10px;
+    margin-left: 54%
 }
+.ant-btn-lg{
+    font-size: 49px ;
+  }
+
+.ant-layout-footer {
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    padding: 5px;
+    margin: 5px;
+    height: 8%;
+    width: auto;
+    }
+
 
 .ant-layout-header {
+    margin: 5px;
     height: 100px;
     background: rgba(0, 0, 0, 0) url(http://stephanviranyi.com/wordpress/wp-content/uploads/2013/04/abstract_Logo.png) no-repeat center
 }
 
-.logo-header {
+/* .logo-header {
     padding: 0 10 10 0;
     opacity: 1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: 20px bolder
-}
+} */
 
 /* html {
     overflow: hidden;

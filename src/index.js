@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Row, Col, Input, Layout } from "antd";
+import { Row, Col, Input, Layout, Button } from "antd";
 import InputValue from "./components/Inputs/input-value";
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
@@ -18,7 +18,8 @@ class App extends Component {
     persent: 15,
     tier: undefined,
     inputArr: [1],
-    startValue: null
+    startValue: null,
+    image: "./Images/1123.png"
   };
 
   oneMoreArr = val => {
@@ -90,17 +91,17 @@ class App extends Component {
   };
 
   render() {
-    const { town, persent, res, tier, inputArr, startValue } = this.state;
+    const { town, persent, res, tier, inputArr, startValue,image } = this.state;
 
 
     return (
       <Layout className="main-page">
         <Header>
-          <div className="logo-header">Калькуляток Крафта ресурсов и процент возврата от городов</div>
+          <img className="tree-logo" src={image} alt="" ></img>
         </Header>
         <Content>
           <Row
-            style={{ border: "2px solid", padding: "10px", margin: 3 }}
+            style={{ border: "2px solid", padding: "10px", margin: 15 }}
             gutter={5}
           >
             <Col
@@ -144,7 +145,8 @@ class App extends Component {
           })}
         </Content>
         <Footer>
- 
+          <Button size="large" style={{ float: "right", padding: "10px" }} type="link" ghost icon="github" href="https://github.com/pivo223"></Button>
+
         </Footer>
       </Layout>
     );
