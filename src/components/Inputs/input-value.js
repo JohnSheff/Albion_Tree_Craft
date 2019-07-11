@@ -28,10 +28,10 @@ export default class InputValue extends Component {
     return (
       <Content>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
-          <Col sm={24} md={24} lg={12}>
+          <Col xs={24} sm={24} md={24} lg={12}>
             {this.props.tierValue === 2 ? (null) : <>
               <Input
-                size="large"
+              
                 style={{ textAlign: "right", }}
                 prefix={this.props.tier === undefined ? ("Выбирите Тир продукта"
                 ) : "Продукт T" + (this.props.tierValue - 1)}
@@ -59,9 +59,9 @@ export default class InputValue extends Component {
           </>}
         </Row>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
-          <Col sm={24} md={12} lg={12}>
+          <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-              size="large"
+              
               style={{ textAlign: "right" }}
               type="text"
               prefix={this.props.tier === undefined ? (
@@ -72,9 +72,9 @@ export default class InputValue extends Component {
               disabled
             />
           </Col>
-          <Col sm={24} md={12} lg={12}>
+          <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-              size="large"
+             
               style={{
                 color: "#a8071a", textAlign: "right", fontSize: "20px"
               }}

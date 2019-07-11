@@ -104,10 +104,10 @@ class App extends Component {
             </Col>
             <Col xs={24} sm={24} md={12}>
               <Input
-                size="large"
+              
                 placeholder=""
                 disabled
-                style={{ backgroundColor: "#e6fffb27", color: "red", textAlign: "center" }}
+                style={{color: "red"}}
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
@@ -123,7 +123,7 @@ class App extends Component {
             <Col sm={24} md={24} lg={12}>
               <Input
                 style={{ width: "100%" }}
-                size="large"
+               
                 type="text"
                 placeholder="Вводим количество"
                 value={startValue}

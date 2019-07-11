@@ -7,6 +7,11 @@
     /* background: url("/public/Images/artwoork.jpg"); */
 }
 
+.ant-select {
+    font: 18px bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -43,21 +48,21 @@ body {
 }
 
 .ant-select-lg .ant-select-selection--single {
-    background-color: #e6fffb27;
+    background-color: #ffffff;
     text-align: left;
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ant-input[disabled] {
-    background-color: #e6fffb4b;
+    background-color: #ffffff;
     color: #041ca0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: 20px bolder
 }
 
 .ant-input {
-    background-color: #e6fffb38;
+    background-color: #ffffff;
     color: #041ca0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: 20px bolder
