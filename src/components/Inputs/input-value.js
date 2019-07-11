@@ -43,23 +43,27 @@ export default class InputValue extends Component {
           />
         </Col>
         <Col sm={24} md={12} lg={12}>
-          <Input
-            style={{
-              textAlign: "right",
-            }}
-            className="form-control"
-            // style={{ margin: "auto", width: "auto" }}
+          {this.props.tierValue === 2 ? (
+            null
+          ) : <>
+              <Input
+                style={{
+                  textAlign: "right",
+                }}
+                className="form-control"
+                // style={{ margin: "auto", width: "auto" }}
 
-            prefix={this.props.tier === undefined ? (
-              "Выбирите Тир продукта"
-            ) : "Продукт T" + this.props.tierValue}
+                prefix={this.props.tier === undefined ? (
+                  "Выбирите Тир продукта"
+                ) : "Продукт T" + (this.props.tierValue - 1)}
 
 
-            type="text"
-            placeholder=""
-            value={this.funcSwitchTier(this.props.tierValue)}
-            disabled
-          />
+                type="text"
+                placeholder=""
+                value={this.funcSwitchTier(this.props.tierValue)}
+                disabled
+              />
+            </>}
         </Col>
         {/* this.props.inputArr.length+1>this.props.tierValue */}
         {this.props.tierValue === 2 ? (
