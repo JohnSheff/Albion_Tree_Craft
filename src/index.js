@@ -18,8 +18,7 @@ class App extends Component {
     persent: 15,
     tier: undefined,
     inputArr: [1],
-    startValue: null,
-    image: "./Images/1123.png"
+    startValue: null
   };
 
   oneMoreArr = val => {
@@ -91,25 +90,24 @@ class App extends Component {
   };
 
   render() {
-    const { town, persent, res, tier, inputArr, startValue,image } = this.state;
+    const { town, persent, res, tier, inputArr, startValue } = this.state;
 
 
     return (
       <Layout className="main-page">
         <Header>
-          <img className="tree-logo" src={image} alt="" ></img>
-        </Header>
+           </Header>
         <Content>
           <Row
-            style={{ border: "2px solid", padding: "10px", margin: 15 }}
-            gutter={5}
+            style={{ padding: "10px", margin: 15  }} gutter={5}
           >
             <Col
-              xs={24} sm={12} md={6}>
+              xs={24} sm={24} md={12}>
               <Town
+              
                 selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
-            <Col xs={24} sm={12} md={6}>
+            <Col xs={24} sm={24} md={12}>
               <Input
                 size="large"
                 placeholder=""
@@ -122,11 +120,11 @@ class App extends Component {
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
-            <Col xs={24} sm={12} md={6}>
+            <Col xs={24} sm={24} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
 
-            <Col xs={24} sm={12} md={6}>
+            <Col xs={24} sm={24} md={12}>
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
           </Row>
@@ -145,7 +143,7 @@ class App extends Component {
           })}
         </Content>
         <Footer>
-          <Button size="large" style={{ float: "right", padding: "10px" }} type="link" ghost icon="github" href="https://github.com/pivo223"></Button>
+          <Button size="large" style={{ float: "right"}} type="link" icon="github" href="https://github.com/pivo223"></Button>
 
         </Footer>
       </Layout>

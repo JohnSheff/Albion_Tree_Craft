@@ -8,7 +8,7 @@ export default class Tier extends Component {
   render() {
     const { valueTier, selectTier } = this.props
     return (
-      <Select size="large" style={{ width: "100%" }} value={valueTier || "Выбор тир продукта"} onChange={(e) => { selectTier(e) }}   >
+      <Select size="large" style={{ width: "100%", textAlign: "center" }} value={valueTier || "Выбор тир продукта"} onChange={(e) => { selectTier(e) }}   >
         <Select.Option style={{backgroundColor:"#846c5d"}}value={2}>2 Тир</Select.Option>
         <Select.Option style={{backgroundColor:"#526a40"}}value={3}>3 Тир</Select.Option>
         <Select.Option style={{backgroundColor:"#517891"}}value={4}>4 Тир</Select.Option>

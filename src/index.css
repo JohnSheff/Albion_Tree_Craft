@@ -1,16 +1,25 @@
 .main-page {
     margin: 20px;
-    background-color: #00000000
+    width: 45%;
+    height: 20%;
+    border-radius: 45px ;
+    min-width: 280px;
+    background-color: #ffffffef
     /* background: url("/public/Images/artwoork.jpg"); */
 }
 
-.tree-logo{
-    width: 130px;
-    padding-left: 10px;
-    margin-left: 54%
+
+.ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix{
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+    
+.ant-select-selection-selected-value{
+    width: 100%
 }
 .ant-btn-lg{
-    font-size: 49px ;
+      font-size: 32px ;
   }
 
 .ant-layout-footer {
@@ -18,7 +27,7 @@
     background: rgba(0, 0, 0, 0);
     padding: 5px;
     margin: 5px;
-    height: 8%;
+    height: 20%;
     width: auto;
     }
 
@@ -29,16 +38,6 @@
     background: rgba(0, 0, 0, 0) url(http://stephanviranyi.com/wordpress/wp-content/uploads/2013/04/abstract_Logo.png) no-repeat center
 }
 
-/* .logo-header {
-    padding: 0 10 10 0;
-    opacity: 1;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font: 20px bolder
-} */
-
-/* html {
-    overflow: hidden;
-} */
 
 body {
     background: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg);
@@ -48,7 +47,8 @@ body {
 
 .ant-select-lg .ant-select-selection--single {
     background-color: #e6fffb27;
-    color: #3601b1;
+    text-align: left;
+    color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

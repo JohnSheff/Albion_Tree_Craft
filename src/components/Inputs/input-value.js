@@ -24,15 +24,13 @@ export default class InputValue extends Component {
   };
 
   render() {
-       return (
+    return (
       <Row
-        style={{ border: "2px solid", padding: "10px", margin: 3 }}
+        style={{ padding: 10, margin: 15 }}
         gutter={5}>
-        <Col sm={24} md={12} lg={6}>
+        <Col sm={24} md={12} lg={12}>
           <Input
             style={{
-
-              textAlign: "center",
               width: "100%",
             }}
             className="form-control"
@@ -44,21 +42,21 @@ export default class InputValue extends Component {
             }}
           />
         </Col>
-        <Col sm={24} md={12} lg={4}>
+        <Col sm={24} md={12} lg={12}>
           <Input
             style={{
-              textAlign: "center",
+              textAlign: "right",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
 
             prefix={this.props.tier === undefined ? (
-              null
-            ) : "T" + this.props.tierValue}
+              "Выбирите Тир продукта"
+            ) : "Продукт T" + this.props.tierValue}
 
 
             type="text"
-            placeholder="Выбирите Тир продукта"
+            placeholder=""
             value={this.funcSwitchTier(this.props.tierValue)}
             disabled
           />
@@ -69,8 +67,8 @@ export default class InputValue extends Component {
         ) : <>
             <Col
               xs={24}
-              sm={12}
-              lg={4}
+              sm={24}
+              lg={24}
               style={{ padding: "4px", textAlign: "center" }}>
               <Switch
                 checkedChildren="Раскрытое дерево"
@@ -82,30 +80,35 @@ export default class InputValue extends Component {
             </Col>
           </>}
 
-        <Col sm={24} md={12} lg={5}>
+        <Col sm={24} md={24} lg={12}>
           <Input
             style={{
-              textAlign: "center",
+              textAlign: "right",
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="Рес нужного тира"
+            prefix={this.props.tier === undefined ? (
+              "Ресурс выбраного тира"
+            ) : "Ресурс Т" + this.props.tierValue}
+
+            placeholder=""
             value={this.props.inputVal}
             disabled
           />
         </Col>
-        <Col sm={24} md={24} lg={5}>
+        <Col sm={24} md={24} lg={12}>
           <Input
             style={{
               color: "#a8071a",
-              textAlign: "center",
+              textAlign: "right",
               fontSize: "20px"
             }}
             className="form-control"
             // style={{ margin: "auto", width: "auto" }}
             type="text"
-            placeholder="Бонус от города"
+            prefix="Бонус от города"
+            placeholder=""
             // addonBefore="Бонус от города"
             value={
               this.props.persentValue && this.props.inputVal
