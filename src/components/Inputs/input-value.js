@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Col, Row, Input, Switch } from "antd";
+import { Col, Row, Input, Switch, Layout } from "antd";
 
+const { Content } = Layout;
 export default class InputValue extends Component {
   funcSwitchTier = (tier) => {
     switch (tier) {
@@ -25,54 +26,27 @@ export default class InputValue extends Component {
 
   render() {
     return (
-      <Row
-        style={{ padding: 5, margin: 5 }}
-        gutter={5}>
-        <Col sm={24} md={12} lg={12}>
-          <Input
-            style={{
-              width: "100%",
-            }}
-            className="form-control"
-            type="text"
-            placeholder="Вводим количество"
-            value={this.props.inputVal}
-            onInput={(e) => {
-              this.props.fv(e.target.value);
-            }}
-          />
-        </Col>
-        <Col sm={24} md={12} lg={12}>
-          {this.props.tierValue === 2 ? (
-            null
-          ) : <>
+      <Content>
+        <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+          <Col sm={24} md={24} lg={12}>
+            {this.props.tierValue === 2 ? (null) : <>
               <Input
-                style={{
-                  textAlign: "right",
-                }}
-                className="form-control"
-                // style={{ margin: "auto", width: "auto" }}
-
-                prefix={this.props.tier === undefined ? (
-                  "Выбирите Тир продукта"
+                size="large"
+                style={{ textAlign: "right", }}
+                prefix={this.props.tier === undefined ? ("Выбирите Тир продукта"
                 ) : "Продукт T" + (this.props.tierValue - 1)}
-
-
                 type="text"
                 placeholder=""
                 value={this.funcSwitchTier(this.props.tierValue)}
                 disabled
               />
             </>}
-        </Col>
-        {/* this.props.inputArr.length+1>this.props.tierValue */}
-        {this.props.tierValue === 2 ? (
-          null
-        ) : <>
+          </Col>
+          {this.props.tierValue === 2 ? (null) : <>
             <Col
               xs={24}
-              sm={24}
-              lg={24}
+              md={24}
+              lg={12}
               style={{ padding: "4px", textAlign: "center" }}>
               <Switch
                 checkedChildren="Раскрытое дерево"
@@ -83,46 +57,38 @@ export default class InputValue extends Component {
               />
             </Col>
           </>}
-
-        <Col sm={24} md={24} lg={12}>
-          <Input
-            style={{
-              textAlign: "right",
-            }}
-            className="form-control"
-            // style={{ margin: "auto", width: "auto" }}
-            type="text"
-            prefix={this.props.tier === undefined ? (
-              "Ресурс выбраного тира"
-            ) : "Ресурс Т" + this.props.tierValue}
-
-            placeholder=""
-            value={this.props.inputVal}
-            disabled
-          />
-        </Col>
-        <Col sm={24} md={24} lg={12}>
-          <Input
-            style={{
-              color: "#a8071a",
-              textAlign: "right",
-              fontSize: "20px"
-            }}
-            className="form-control"
-            // style={{ margin: "auto", width: "auto" }}
-            type="text"
-            prefix="Бонус от города"
-            placeholder=""
-            // addonBefore="Бонус от города"
-            value={
-              this.props.persentValue && this.props.inputVal
+        </Row>
+        <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+          <Col sm={24} md={12} lg={12}>
+            <Input
+              size="large"
+              style={{ textAlign: "right" }}
+              type="text"
+              prefix={this.props.tier === undefined ? (
+                "Ресурс выбраного тира"
+              ) : "Ресурс Т" + this.props.tierValue}
+              placeholder=""
+              value={this.props.inputVal}
+              disabled
+            />
+          </Col>
+          <Col sm={24} md={12} lg={12}>
+            <Input
+              size="large"
+              style={{
+                color: "#a8071a", textAlign: "right", fontSize: "20px"
+              }}
+              type="text"
+              prefix="Бонус от города"
+              placeholder=""
+              value={this.props.persentValue && this.props.inputVal
                 ? (this.props.persentValue / 100) * this.props.inputVal
-                : ""
-            }
-            disabled
-          />
-        </Col>
-      </Row>
+                : ""}
+              disabled
+            />
+          </Col>
+        </Row>
+      </Content>
     );
   }
 }

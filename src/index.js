@@ -96,27 +96,18 @@ class App extends Component {
     return (
       <Layout className="main-page">
         <Header>
-           </Header>
+        </Header>
         <Content>
-          <Row
-            style={{ padding: 5, margin: 5  }} gutter={5}
-          >
-            <Col
-              xs={24} sm={24} md={12}>
-              <Town
-              
-                selectTown={this.valueSelectTown} valueTown={town} />
+          <Row style={{ padding: 5, margin: 5 }} gutter={5}          >
+            <Col xs={24} sm={24} md={12}>
+              <Town selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
             <Col xs={24} sm={24} md={12}>
               <Input
                 size="large"
                 placeholder=""
                 disabled
-                style={{
-                  backgroundColor: "#e6fffb27",
-                  color: "red",
-                  textAlign: "center"
-                }}
+                style={{ backgroundColor: "#e6fffb27", color: "red", textAlign: "center" }}
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
@@ -128,6 +119,18 @@ class App extends Component {
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
           </Row>
+          <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+            <Col sm={24} md={24} lg={12}>
+              <Input
+                style={{ width: "100%" }}
+                size="large"
+                type="text"
+                placeholder="Вводим количество"
+                value={startValue}
+                onInput={(e) => { this.firstValue(e.target.value); }}
+              />
+            </Col>
+          </Row>
           {inputArr.map((val, index) => {
             return (
               <InputValue
@@ -135,7 +138,6 @@ class App extends Component {
                 tierValue={tier - index}
                 persentValue={persent}
                 inputVal={startValue}
-                fv={this.firstValue}
                 oneMoreArr={this.oneMoreArr}
                 tier={tier}
               />
@@ -143,7 +145,7 @@ class App extends Component {
           })}
         </Content>
         <Footer>
-          <Button size="large" style={{ float: "right"}} type="link" icon="github" href="https://github.com/pivo223"></Button>
+          <Button size="large" style={{ float: "right" }} type="link" icon="github" href="https://github.com/pivo223"></Button>
 
         </Footer>
       </Layout>
