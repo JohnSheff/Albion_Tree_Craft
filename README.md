@@ -4,8 +4,8 @@ Hello
 
 write in console
 
-npm install
+--npm install
 
 next
 
-npm start
+--npm start
