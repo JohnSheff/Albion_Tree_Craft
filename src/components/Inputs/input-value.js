@@ -26,7 +26,7 @@ export default class InputValue extends Component {
   render() {
     return (
       <Row
-        style={{ padding: 10, margin: 15 }}
+        style={{ padding: 5, margin: 5 }}
         gutter={5}>
         <Col sm={24} md={12} lg={12}>
           <Input

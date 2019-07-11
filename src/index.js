@@ -99,7 +99,7 @@ class App extends Component {
            </Header>
         <Content>
           <Row
-            style={{ padding: "10px", margin: 15  }} gutter={5}
+            style={{ padding: 5, margin: 5  }} gutter={5}
           >
             <Col
               xs={24} sm={24} md={12}>
