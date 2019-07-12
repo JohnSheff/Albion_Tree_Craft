@@ -18,12 +18,15 @@ class App extends Component {
     persent: 15,
     tier: undefined,
     inputArr: [1],
-    startValue: null
+    startValue: null,
+    swCheack: false
   };
 
   oneMoreArr = val => {
+    this.setState({ swCheack: val })
     if (this.state.inputArr.length < this.state.tier - 1) {
       if (val) {
+
         this.state.inputArr.push(val);
         this.setState({ inputArr: this.state.inputArr });
         // } else if (this.state.inputArr.length === 1) {
@@ -53,7 +56,7 @@ class App extends Component {
   };
 
   valueSelectTier = valTier => {
-
+    this.setState({ swCheack: false })
     this.setState({ tier: valTier });
     this.setState({ inputArr: [true] })
 
@@ -90,9 +93,9 @@ class App extends Component {
   };
 
   render() {
-    const { town, persent, res, tier, inputArr, startValue } = this.state;
-
-
+    const { town, persent, res, tier, inputArr, startValue, swCheack } = this.state;
+    console.log(inputArr)
+    console.log(swCheack)
     return (
       <Layout className="main-page">
         <Header>
@@ -104,10 +107,10 @@ class App extends Component {
             </Col>
             <Col xs={24} sm={24} md={12}>
               <Input
-              
+
                 placeholder=""
                 disabled
-                style={{color: "red"}}
+                style={{ color: "red" }}
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
@@ -123,7 +126,7 @@ class App extends Component {
             <Col sm={24} md={24} lg={12}>
               <Input
                 style={{ width: "100%" }}
-               
+
                 type="text"
                 placeholder="Вводим количество"
                 value={startValue}
@@ -140,6 +143,9 @@ class App extends Component {
                 inputVal={startValue}
                 oneMoreArr={this.oneMoreArr}
                 tier={tier}
+                town={town}
+                res={res}
+                swCheack={swCheack}
               />
             );
           })}

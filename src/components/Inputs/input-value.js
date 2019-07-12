@@ -25,64 +25,84 @@ export default class InputValue extends Component {
   };
 
   render() {
+    const { tierValue, tier, inputVal, persentValue, oneMoreArr, town, res, swCheack } = this.props
+
     return (
       <Content>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
           <Col xs={24} sm={24} md={24} lg={12}>
             {this.props.tierValue === 2 ? (null) : <>
               <Input
-              
+
                 style={{ textAlign: "right", }}
-                prefix={this.props.tier === undefined ? ("Выбирите Тир продукта"
-                ) : "Продукт T" + (this.props.tierValue - 1)}
+                prefix={tier === undefined ? ("Выбирите Тир продукта"
+                ) : "Продукт T" + (tierValue - 1)}
                 type="text"
                 placeholder=""
-                value={this.funcSwitchTier(this.props.tierValue)}
+                value={this.funcSwitchTier(tierValue)}
                 disabled
               />
             </>}
           </Col>
-          {this.props.tierValue === 2 ? (null) : <>
+          {town !== undefined && res !== undefined && inputVal !== null && tier !== undefined ? tierValue === 2 ? (<>
             <Col
               xs={24}
               md={24}
               lg={12}
               style={{ padding: "4px", textAlign: "center" }}>
               <Switch
-                checkedChildren="Раскрытое дерево"
-                unCheckedChildren="Свернутое дерево"
+                disabled
+                checkedChildren="Свернуть"
+                unCheckedChildren="Раскрыть"
                 onChange={(e) => {
-                  this.props.oneMoreArr(e);
+                  oneMoreArr(e);
                 }}
               />
             </Col>
-          </>}
+          </>) : <>
+              <Col
+                xs={24}
+                md={24}
+                lg={12}
+                style={{ padding: "4px", textAlign: "center" }}>
+                <Switch
+
+                  checked={swCheack}
+                  checkedChildren="Свернуть"
+                  unCheckedChildren="Раскрыть"
+                  onChange={(e) => {
+                    oneMoreArr(e);
+                  }}
+                />
+              </Col>
+            </> : null}
+
         </Row>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-              
+
               style={{ textAlign: "right" }}
               type="text"
-              prefix={this.props.tier === undefined ? (
+              prefix={tier === undefined ? (
                 "Ресурс выбраного тира"
-              ) : "Ресурс Т" + this.props.tierValue}
+              ) : "Ресурс Т" + tierValue}
               placeholder=""
-              value={this.props.inputVal}
+              value={inputVal}
               disabled
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-             
+
               style={{
                 color: "#a8071a", textAlign: "right", fontSize: "20px"
               }}
               type="text"
               prefix="Бонус от города"
               placeholder=""
-              value={this.props.persentValue && this.props.inputVal
-                ? (this.props.persentValue / 100) * this.props.inputVal
+              value={persentValue && inputVal
+                ? (persentValue / 100) * inputVal
                 : ""}
               disabled
             />
