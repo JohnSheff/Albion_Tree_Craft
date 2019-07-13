@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Row, Col, Input, Layout, Button } from "antd";
+import lodash from "lodash";
+import { Row, Col, Input, Layout, Button, Slider } from "antd";
 import InputValue from "./components/Inputs/input-value";
 import Town from "./components/towns/town";
 import Tier from "./components/tiers/tier-resourse";
@@ -17,28 +18,30 @@ class App extends Component {
     res: undefined,
     persent: 15,
     tier: undefined,
-    inputArr: [1],
     startValue: null,
-    swCheack: undefined
+    slider: 1,
+    maxSlider: undefined
   };
 
-  oneMoreArr = val => {
+  // oneMoreArr = val => {
 
-    if (this.state.inputArr.length <= this.state.tier - 1) {
-      if (val && this.state.inputArr.length < 7) {
+  // };
 
-        this.state.inputArr.push(val);
-        this.setState({ inputArr: this.state.inputArr });
-      }  else if(this.state.inputArr.length===1){
-        val=false
-      }
-      else {
-        this.state.inputArr.pop()
-        this.setState({ inputArr: this.state.inputArr });
-
-      }
-    }
+  sliderFunc = val => {
+    this.setState({ slider: val });
   };
+  // oneMoreArr = val => {
+  //   if (this.state.inputArr.length <= this.state.tier - 1) {
+  //     if (val && this.state.inputArr.length < 7) {
+  //       this.state.inputArr.push(val);
+  //       this.setState({ inputArr: this.state.inputArr });
+  //     } else if (this.state.inputArr.length === 1) {
+  //     } else {
+  //       this.state.inputArr.pop();
+  //       this.setState({ inputArr: this.state.inputArr });
+  //     }
+  //   }
+  // };
 
   firstValue = oneVal => {
     this.setState({ startValue: oneVal });
@@ -54,34 +57,23 @@ class App extends Component {
   };
 
   valueSelectTier = valTier => {
-    this.setState({ swCheack: false })
+    this.setState({ maxSlider: valTier - 1 });
+    this.setState({ slider: 1 });
     this.setState({ tier: valTier });
-    this.setState({ inputArr: [true] })
-
-    // if (valTier < this.state.inputArr.length) {
-    //   this.setState({
-    //     inputArr: this.state.inputArr.splice(
-    //       0,
-    //       this.state.inputArr.length -
-    //       (this.state.inputArr.length - valTier + 1)
-    //     )
-    //   });
-    // } else{
-    //   this.setState({ inputArr: [1] })
-    // }
+    this.setState({ inputArr: [1] });
   };
 
   valuePersent = (townVal, resVal) => {
     if (
-      Fort.some((
-        element) => {
-        const { town, res } = element
+      Fort.some(element => {
+        const { town, res } = element;
         return (
           JSON.stringify({ town, res }) ===
           JSON.stringify({
             town: townVal || this.state.town,
             res: resVal || this.state.res
-          }))
+          })
+        );
       })
     ) {
       this.setState({ persent: 35 });
@@ -91,21 +83,18 @@ class App extends Component {
   };
 
   render() {
-    const { town, persent, res, tier, inputArr, startValue, swCheack } = this.state;
-    console.log(inputArr)
-    console.log(this.state.inputArr.length)
+    const { town, persent, res, tier, startValue } = this.state;
+    // console.log(inputArr);
     return (
       <Layout className="main-page">
-        <Header>
-        </Header>
+        <Header />
         <Content>
-          <Row style={{ padding: 5, margin: 5 }} gutter={5}          >
+          <Row style={{ padding: 5, margin: 5 }} gutter={5}>
             <Col xs={24} sm={24} md={12}>
               <Town selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
             <Col xs={24} sm={24} md={12}>
               <Input
-
                 placeholder=""
                 disabled
                 style={{ color: "red" }}
@@ -115,7 +104,6 @@ class App extends Component {
             <Col xs={24} sm={24} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
-
             <Col xs={24} sm={24} md={12}>
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
@@ -124,15 +112,60 @@ class App extends Component {
             <Col sm={24} md={24} lg={12}>
               <Input
                 style={{ width: "100%" }}
-
                 type="text"
                 placeholder="Вводим количество"
                 value={startValue}
-                onInput={(e) => { this.firstValue(e.target.value); }}
+                onInput={e => {
+                  this.firstValue(e.target.value);
+                }}
               />
             </Col>
+            {town !== undefined &&
+            res !== undefined &&
+            startValue !== null &&
+            tier !== undefined ? (
+              tier === 2 ? (
+                <>
+                  <Col
+                    xs={24}
+                    md={24}
+                    lg={12}
+                    style={{ padding: "4px", textAlign: "center" }}
+                  >
+                    <Slider
+                      disabled
+                      checkedChildren="Свернуть"
+                      unCheckedChildren="Раскрыть"
+                    />
+                  </Col>
+                </>
+              ) : (
+                <>
+                  <Col
+                    xs={24}
+                    md={24}
+                    lg={12}
+                    style={{ padding: "4px", textAlign: "center" }}
+                  >
+                    <Slider
+                      tooltipVisible
+                      range={false}
+                      value={this.state.slider}
+                      min={1}
+                      max={this.state.maxSlider}
+                      checkedChildren="Свернуть"
+                      unCheckedChildren="Раскрыть"
+                      onChange={e => {
+                        this.sliderFunc(e);
+                        // this.oneMoreArr(e);
+                      }}
+                    />
+                  </Col>
+                </>
+              )
+            ) : null}
           </Row>
-          {inputArr.map((val, index) => {
+          {lodash.range(this.state.slider).map((val, index) => {
             return (
               <InputValue
                 key={index}
@@ -143,14 +176,18 @@ class App extends Component {
                 tier={tier}
                 town={town}
                 res={res}
-                swCheack={swCheack}
               />
             );
           })}
         </Content>
         <Footer>
-          <Button size="large" style={{ float: "right" }} type="link" icon="github" href="https://github.com/pivo223"></Button>
-
+          <Button
+            size="large"
+            style={{ float: "right" }}
+            type="link"
+            icon="github"
+            href="https://github.com/pivo223"
+          />
         </Footer>
       </Layout>
     );

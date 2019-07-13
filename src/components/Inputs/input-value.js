@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Col, Row, Input, Switch, Layout } from "antd";
+import { Col, Row, Input,  Layout } from "antd";
 
 const { Content } = Layout;
 export default class InputValue extends Component {
-  funcSwitchTier = (tier) => {
+  funcSwitchTier = tier => {
     switch (tier) {
       case 8:
         return this.props.inputVal ? this.props.inputVal * 5 : "";
@@ -25,66 +25,45 @@ export default class InputValue extends Component {
   };
 
   render() {
-    const { tierValue, tier, inputVal, persentValue, oneMoreArr, town, res,  } = this.props
+    const {
+      tierValue,
+      tier,
+      inputVal,
+      persentValue,
+       } = this.props;
 
     return (
       <Content>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
           <Col xs={24} sm={24} md={24} lg={12}>
-            {this.props.tierValue === 2 ? (null) : <>
-              <Input
-
-                style={{ textAlign: "right", }}
-                prefix={tier === undefined ? ("Выбирите Тир продукта"
-                ) : "Продукт T" + (tierValue - 1)}
-                type="text"
-                placeholder=""
-                value={this.funcSwitchTier(tierValue)}
-                disabled
-              />
-            </>}
-          </Col>
-          {town !== undefined && res !== undefined && inputVal !== null && tier !== undefined ? tierValue === 2 ? (<>
-            <Col
-              xs={24}
-              md={24}
-              lg={12}
-              style={{ padding: "4px", textAlign: "center" }}>
-              <Switch
-                disabled
-                checkedChildren="Свернуть"
-                unCheckedChildren="Раскрыть"
-                onChange={(e) => {
-                  oneMoreArr(e);
-                }}
-              />
-            </Col>
-          </>) : <>
-              <Col
-                xs={24}
-                md={24}
-                lg={12}
-                style={{ padding: "4px", textAlign: "center" }}>
-                <Switch
-                  checkedChildren="Свернуть"
-                  unCheckedChildren="Раскрыть"
-                  onChange={(e) => {
-                    oneMoreArr(e);
-                  }}
+            {this.props.tierValue === 2 ? null : (
+              <>
+                <Input
+                  style={{ textAlign: "right" }}
+                  prefix={
+                    tier === undefined
+                      ? "Выбирите Тир продукта"
+                      : "Продукт T" + (tierValue - 1)
+                  }
+                  type="text"
+                  placeholder=""
+                  value={this.funcSwitchTier(tierValue)}
+                  disabled
                 />
-              </Col>
-            </> : null}
-
-        </Row>
+              </>
+            )}
+          </Col>
+                  </Row>
         <Row style={{ padding: 5, margin: 5 }} gutter={5}>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-
               style={{ textAlign: "right" }}
               type="text"
-              prefix={tier === undefined ? (
-                "Ресурс выбраного тира"
-              ) : "Ресурс Т" + tierValue}
+              prefix={
+                tier === undefined
+                  ? "Ресурс выбраного тира"
+                  : "Ресурс Т" + tierValue
+              }
               placeholder=""
               value={inputVal}
               disabled
@@ -92,16 +71,17 @@ export default class InputValue extends Component {
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Input
-
               style={{
-                color: "#a8071a", textAlign: "right", fontSize: "20px"
+                color: "#a8071a",
+                textAlign: "right",
+                fontSize: "20px"
               }}
               type="text"
               prefix="Бонус от города"
               placeholder=""
-              value={persentValue && inputVal
-                ? (persentValue / 100) * inputVal
-                : ""}
+              value={
+                persentValue && inputVal ? ((persentValue / 100) * inputVal).toFixed(2) : ""
+              }
               disabled
             />
           </Col>
@@ -110,5 +90,3 @@ export default class InputValue extends Component {
     );
   }
 }
-
-
