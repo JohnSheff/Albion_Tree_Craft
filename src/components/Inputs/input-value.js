@@ -34,7 +34,7 @@ export default class InputValue extends Component {
 
     return (
       <Content>
-        <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+        <Row style={{ padding: 8, margin: 8 }} gutter={5}>
           <Col xs={24} sm={24} md={24} lg={12}>
             {this.props.tierValue === 2 ? null : (
               <>
@@ -54,7 +54,7 @@ export default class InputValue extends Component {
             )}
           </Col>
                   </Row>
-        <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+        <Row style={{ padding: 8, margin: 8 }} gutter={5}>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Input
               style={{ textAlign: "right" }}

@@ -30,18 +30,6 @@ class App extends Component {
   sliderFunc = val => {
     this.setState({ slider: val });
   };
-  // oneMoreArr = val => {
-  //   if (this.state.inputArr.length <= this.state.tier - 1) {
-  //     if (val && this.state.inputArr.length < 7) {
-  //       this.state.inputArr.push(val);
-  //       this.setState({ inputArr: this.state.inputArr });
-  //     } else if (this.state.inputArr.length === 1) {
-  //     } else {
-  //       this.state.inputArr.pop();
-  //       this.setState({ inputArr: this.state.inputArr });
-  //     }
-  //   }
-  // };
 
   firstValue = oneVal => {
     this.setState({ startValue: oneVal });
@@ -89,7 +77,7 @@ class App extends Component {
       <Layout className="main-page">
         <Header />
         <Content>
-          <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
             <Col xs={24} sm={24} md={12}>
               <Town selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
@@ -101,6 +89,8 @@ class App extends Component {
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
+          </Row>
+          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
             <Col xs={24} sm={24} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
@@ -108,7 +98,7 @@ class App extends Component {
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
           </Row>
-          <Row style={{ padding: 5, margin: 5 }} gutter={5}>
+          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
             <Col sm={24} md={24} lg={12}>
               <Input
                 style={{ width: "100%" }}
@@ -120,50 +110,52 @@ class App extends Component {
                 }}
               />
             </Col>
+
             {town !== undefined &&
-            res !== undefined &&
-            startValue !== null &&
-            tier !== undefined ? (
-              tier === 2 ? (
-                <>
-                  <Col
-                    xs={24}
-                    md={24}
-                    lg={12}
-                    style={{ padding: "4px", textAlign: "center" }}
-                  >
-                    <Slider
-                      disabled
-                      checkedChildren="Свернуть"
-                      unCheckedChildren="Раскрыть"
-                    />
-                  </Col>
-                </>
-              ) : (
-                <>
-                  <Col
-                    xs={24}
-                    md={24}
-                    lg={12}
-                    style={{ padding: "4px", textAlign: "center" }}
-                  >
-                    <Slider
-                      tooltipVisible
-                      range={false}
-                      value={this.state.slider}
-                      min={1}
-                      max={this.state.maxSlider}
-                      checkedChildren="Свернуть"
-                      unCheckedChildren="Раскрыть"
-                      onChange={e => {
-                        this.sliderFunc(e);
-                        // this.oneMoreArr(e);
-                      }}
-                    />
-                  </Col>
-                </>
-              )
-            ) : null}
+              res !== undefined &&
+              startValue !== null &&
+              tier !== undefined ? (
+                tier === 2 ? (
+                  <>
+                    <Col
+                      xs={24}
+                      md={24}
+                      lg={12}
+                      style={{ padding: "7px", textAlign: "center" }}
+                    >
+                      <Slider
+                        disabled
+                        checkedChildren="Свернуть"
+                        unCheckedChildren="Раскрыть"
+                      />
+                    </Col>
+                  </>
+                ) : (
+                    <>
+                      <Col
+                        xs={24}
+                        md={24}
+                        lg={12}
+                        style={{ padding: "7px", textAlign: "center" }}
+                      >
+                        <Slider
+                        
+                          tooltipVisible
+                          range={false}
+                          value={this.state.slider}
+                          min={1}
+                          max={this.state.maxSlider}
+                          checkedChildren="Свернуть"
+                          unCheckedChildren="Раскрыть"
+                          onChange={e => {
+                            this.sliderFunc(e);
+                            // this.oneMoreArr(e);
+                          }}
+                        />
+                      </Col>
+                    </>
+                  )
+              ) : null}
           </Row>
           {lodash.range(this.state.slider).map((val, index) => {
             return (

@@ -4,9 +4,31 @@
     border-radius: 45px;
     min-width: 280px;
     background-color: #ffffffef
-    /* background: url("/public/Images/artwoork.jpg"); */
+}
+.ant-slider{
+    margin: 13px 6px 10px
+}
+.ant-tooltip{
+    font-size: 13px 
+}
+.ant-tooltip-inner{
+    min-width: 20px;
+    min-height: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 1px 6px
+    }
+.ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
+    line-height: 1;
+    left: 9px;
+    transform: translateY(-35%);
+    background-color: #ffffff00
 }
 
+.ant-select-selection__rendered{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
 .ant-select {
     font: 18px bolder;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -15,15 +37,18 @@
 .ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .ant-select-selection-selected-value {
-    width: 100%
+    width: 100%;
+    
 }
+
 
 .ant-btn-lg {
     font-size: 32px;
+    
 }
 
 .ant-layout-footer {
@@ -42,7 +67,8 @@
 }
 
 body {
-    background: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg);
+  
+    background: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg) no-repeat ;
     background-size: cover;
     height: auto;
 }
