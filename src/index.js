@@ -77,7 +77,7 @@ class App extends Component {
       <Layout className="main-page">
         <Header />
         <Content>
-          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
+          <Row style={{ padding: 4, margin: 4 }} gutter={4}>
             <Col xs={24} sm={24} md={12}>
               <Town selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
@@ -90,7 +90,7 @@ class App extends Component {
               />
             </Col>
           </Row>
-          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
+          <Row style={{ padding: 8, margin: 4 }} gutter={4}>
             <Col xs={24} sm={24} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
@@ -98,7 +98,7 @@ class App extends Component {
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
           </Row>
-          <Row style={{ padding: 8, margin: 8 }} gutter={5}>
+          <Row style={{ padding: 4, margin: 4 }} gutter={4}>
             <Col sm={24} md={24} lg={12}>
               <Input
                 style={{ width: "100%" }}
