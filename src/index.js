@@ -19,25 +19,23 @@ class App extends Component {
     tier: undefined,
     inputArr: [1],
     startValue: null,
-    swCheack: false
+    swCheack: undefined
   };
 
   oneMoreArr = val => {
-    this.setState({ swCheack: val })
-    if (this.state.inputArr.length < this.state.tier - 1) {
-      if (val) {
+
+    if (this.state.inputArr.length <= this.state.tier - 1) {
+      if (val && this.state.inputArr.length < 7) {
 
         this.state.inputArr.push(val);
         this.setState({ inputArr: this.state.inputArr });
-        // } else if (this.state.inputArr.length === 1) {
-        //   val = false;
-      } else {
-        this.setState({
-          inputArr: this.state.inputArr.splice(
-            this.state.inputArr.length - 1,
-            1
-          )
-        });
+      }  else if(this.state.inputArr.length===1){
+        val=false
+      }
+      else {
+        this.state.inputArr.pop()
+        this.setState({ inputArr: this.state.inputArr });
+
       }
     }
   };
@@ -95,7 +93,7 @@ class App extends Component {
   render() {
     const { town, persent, res, tier, inputArr, startValue, swCheack } = this.state;
     console.log(inputArr)
-    console.log(swCheack)
+    console.log(this.state.inputArr.length)
     return (
       <Layout className="main-page">
         <Header>

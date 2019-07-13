@@ -25,7 +25,7 @@ export default class InputValue extends Component {
   };
 
   render() {
-    const { tierValue, tier, inputVal, persentValue, oneMoreArr, town, res, swCheack } = this.props
+    const { tierValue, tier, inputVal, persentValue, oneMoreArr, town, res,  } = this.props
 
     return (
       <Content>
@@ -66,8 +66,6 @@ export default class InputValue extends Component {
                 lg={12}
                 style={{ padding: "4px", textAlign: "center" }}>
                 <Switch
-
-                  checked={swCheack}
                   checkedChildren="Свернуть"
                   unCheckedChildren="Раскрыть"
                   onChange={(e) => {
