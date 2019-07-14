@@ -42,8 +42,8 @@ export default class InputValue extends Component {
                   style={{ textAlign: "right" }}
                   prefix={
                     tier === undefined
-                      ? "Выбирите Тир продукта"
-                      : "Продукт T" + (tierValue - 1)
+                      ? "Ресурс выбраного тира" 
+                      : "Ресурс Т" + (tierValue - 1) 
                   }
                   type="text"
                   placeholder=""
@@ -61,8 +61,8 @@ export default class InputValue extends Component {
               type="text"
               prefix={
                 tier === undefined
-                  ? "Ресурс выбраного тира"
-                  : "Ресурс Т" + tierValue
+                  ? "Выбирите Тир продукта"
+                  : "Продукт T" + tierValue
               }
               placeholder=""
               value={inputVal}

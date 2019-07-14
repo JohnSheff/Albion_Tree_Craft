@@ -71,9 +71,12 @@
 }
 
 body {
-    background: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg) no-repeat;
+    background-image: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg);
+    background-repeat: no-repeat;
+    /* background-position: center; */
     background-size: cover;
-    height: auto;
+    background-size: 2895px;
+    /* url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg) no-repeat; */
 }
 
 .ant-select-lg .ant-select-selection--single {
