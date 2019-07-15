@@ -78,10 +78,10 @@ class App extends Component {
         <Header />
         <Content>
           <Row style={{ padding: 4, margin: 4 }} gutter={4}>
-            <Col xs={24} sm={24} md={12}>
+            <Col xs={12} sm={12} md={12}>
               <Town selectTown={this.valueSelectTown} valueTown={town} />
             </Col>
-            <Col xs={24} sm={24} md={12}>
+            <Col xs={12} sm={12} md={12}>
               <Input
                 placeholder=""
                 disabled
@@ -91,15 +91,15 @@ class App extends Component {
             </Col>
           </Row>
           <Row style={{ padding: 8, margin: 4 }} gutter={4}>
-            <Col xs={24} sm={24} md={12}>
+            <Col xs={12} sm={12} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
-            <Col xs={24} sm={24} md={12}>
+            <Col xs={12} sm={12} md={12}>
               <Tier selectTier={this.valueSelectTier} valueTier={tier} />
             </Col>
           </Row>
           <Row style={{ padding: 4, margin: 4 }} gutter={4}>
-            <Col sm={24} md={24} lg={12}>
+            <Col xs={12} md={12} lg={12}>
               <Input
                 style={{ width: "100%" }}
                 type="text"
@@ -118,8 +118,8 @@ class App extends Component {
                 tier === 2 ? (
                   <>
                     <Col
-                      xs={24}
-                      md={24}
+                      xs={12}
+                      md={12}
                       lg={12}
                       style={{ padding: "7px", textAlign: "center" }}
                     >
@@ -133,8 +133,8 @@ class App extends Component {
                 ) : (
                     <>
                       <Col
-                        xs={24}
-                        md={24}
+                        xs={12}
+                        md={12}
                         lg={12}
                         style={{ padding: "7px", textAlign: "center" }}
                       >

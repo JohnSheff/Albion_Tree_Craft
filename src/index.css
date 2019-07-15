@@ -2,8 +2,9 @@
     margin: 10px;
     width: 45%;
     border-radius: 45px;
-    min-width: 280px;
-    background-color: #ffffffef
+    min-width: 410px;
+    min-height: 300px;
+    background-color: #ffffffef;
 }
 
 .ant-slider {
@@ -71,12 +72,10 @@
 }
 
 body {
-    background-image: url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg);
     background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: cover;
-    background-size: 2895px;
-    /* url(https://massivelyop.com/wp-content/uploads/2016/05/albion2.jpg) no-repeat; */
+    background-size: cover ;
+    background-attachment: fixed;
+    height: auto;   
 }
 
 .ant-select-lg .ant-select-selection--single {
