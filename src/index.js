@@ -90,7 +90,7 @@ class App extends Component {
               />
             </Col>
           </Row>
-          <Row style={{ padding: 8, margin: 4 }} gutter={4}>
+          <Row style={{ padding: 4, margin: 4 }} gutter={4}>
             <Col xs={12} sm={12} md={12}>
               <Resourse selectRes={this.valueSelectRes} valueRes={res} />
             </Col>
