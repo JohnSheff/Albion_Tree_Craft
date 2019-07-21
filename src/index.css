@@ -32,21 +32,22 @@
 
 .ant-select-selection__rendered {
     font-family: 'Playfair Display', serif;
-    
+    font-size: 17px
 }
 
 .ant-select {
-    
+    font-size: 17px;
     font-family: 'Playfair Display', serif;
 }
 
 .ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
     color: #000000;
     font-family: 'Playfair Display', serif;
-   
+    font-size: 17px;
 }
 
 .ant-select-selection-selected-value {
+    font-size: 17px;
     width: 100%;
 }
 
@@ -83,23 +84,26 @@ body {
     text-align: left;
     color: #000000;
     font-family: 'Playfair Display', serif;
+    font-size: 17px;
 }
 
 .ant-input[disabled] {
     background-color: #ffffff;
     color: #041ca0;
     font-family: 'Playfair Display', serif;
-    
+    font-size: 17px;
 }
 
 .ant-input {
     background-color: #ffffff;
     color: #041ca0;
     font-family: 'Playfair Display', serif;
+    font-size: 17px;
     
 }
 
 .ant-input::placeholder {
-    color: #000000;
+    color: #0a06ff;
     font-family: 'Playfair Display', serif;
+    font-size: 17px;
 }
