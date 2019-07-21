@@ -2,9 +2,11 @@
     margin: 10px;
     width: 45%;
     border-radius: 45px;
-    min-width: 410px;
+    min-width: 420px;
     min-height: 300px;
     background-color: #ffffffef;
+    
+    
 }
 
 .ant-slider {
@@ -31,18 +33,19 @@
 }
 
 .ant-select-selection__rendered {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px;
 }
 
 .ant-select {
+    color: rgba(241, 64, 64, 0.897) ;
     font-size: 17px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
     color: #000000;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
 }
 
@@ -74,36 +77,35 @@
 
 body {
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: cover;
     background-attachment: fixed;
-    height: auto;   
+    height: auto;
 }
 
 .ant-select-lg .ant-select-selection--single {
     background-color: #ffffff;
     text-align: left;
     color: #000000;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
 }
 
 .ant-input[disabled] {
     background-color: #ffffff;
     color: #041ca0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
 }
 
 .ant-input {
     background-color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
     color: #041ca0;
-    font-family: 'Playfair Display', serif;
     font-size: 17px;
-    
 }
 
 .ant-input::placeholder {
-    color: #0a06ff;
-    font-family: 'Playfair Display', serif;
+    color: #3a37f5c9;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
 }

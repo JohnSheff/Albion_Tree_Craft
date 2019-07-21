@@ -85,7 +85,7 @@ class App extends Component {
               <Input
                 placeholder=""
                 disabled
-                style={{ color: "red" }}
+                style={{ color: "rgba(241, 64, 64, 0.897)"  }}
                 value={"Бонус города " + persent + "%"}
               />
             </Col>
