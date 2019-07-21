@@ -31,19 +31,19 @@
 }
 
 .ant-select-selection__rendered {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    
 }
 
 .ant-select {
-    font: 14px bolder;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    font-family: 'Playfair Display', serif;
 }
 
 .ant-input-affix-wrapper .ant-input-prefix, .ant-input-affix-wrapper .ant-input-suffix {
     color: #000000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+   
 }
 
 .ant-select-selection-selected-value {
@@ -82,23 +82,24 @@ body {
     background-color: #ffffff;
     text-align: left;
     color: #000000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .ant-input[disabled] {
     background-color: #ffffff;
     color: #041ca0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font: 18px bolder
+    font-family: 'Playfair Display', serif;
+    
 }
 
 .ant-input {
     background-color: #ffffff;
     color: #041ca0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font: 18px bolder
+    font-family: 'Playfair Display', serif;
+    
 }
 
 .ant-input::placeholder {
-    color: #000000
+    color: #000000;
+    font-family: 'Playfair Display', serif;
 }

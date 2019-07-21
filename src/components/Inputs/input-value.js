@@ -74,7 +74,7 @@ export default class InputValue extends Component {
               style={{
                 color: "#a8071a",
                 textAlign: "right",
-                fontSize: "20px"
+               
               }}
               type="text"
               prefix="Бонус от города"
