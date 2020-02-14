@@ -178,7 +178,7 @@ class App extends Component {
             style={{ float: "right" }}
             type="link"
             icon="github"
-            href="https://github.com/pivo223"
+            href="https://github.com/JohnSheff"
           />
         </Footer>
       </Layout>
